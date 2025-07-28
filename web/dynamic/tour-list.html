@@ -1,0 +1,582 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="20"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="bannerimage"
+    type="tree"
+    request="cat"
+    parentid=""
+    postsql="select * from [db.bannerimage] where catid = [##cms.query.catid##]"
+  />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="tour">
+  <member
+    name="cat-tours"
+    type="tree"
+    request="cat"
+    parentid="[##cms.query.catid##]"
+    order="ord"
+  />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="18"
+  name="db"
+  usedforid="[##cms.query.catid##]"
+>
+  <member name="scalar" type="scalar" typeid="150" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="20"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="20"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="tour-list"
+    type="list"
+    link="tour.bc"
+    propertyid="3087941,3087943,3087944,3087942, 3087425,3087945, 3087422 , 3087423 , 3087424 ,3087428,8181,10000504,8076"
+    perpage="16"
+    pageno="[##cms.query.pagenum|(1)##]"
+    typeid="159"
+    size="295x349"
+    order="[##cms.Host.tour-list-order|(ord)##]"
+  />
+  <member
+    name="paging"
+    type="list"
+    request="paging"
+    count="5"
+    parentname="tour-list"
+  />
+</basis>
+
+
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="1"
+  usedforid="[##cms.query.aid##]"
+>
+  <member name="aid-text" type="view" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="1"
+  usedforid="2379515"
+>
+  <member typeid="159" propertyid="7249" name="about-us-article" type="view" />
+  <member name="data" type="view" request="rdfa" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="media"
+  lid="2"
+  name="db"
+  usedforid="2379515"
+  sourcemid="article"
+>
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>
+      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری پارمیدا سیر پارس)##]
+    </title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  پارمیدا سیر پارس)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden tour-list">
+    <basis core="call" file="header.inc" />
+    <main>
+      <section
+        class="w-full relative h-[273px] flex justify-center items-center flex-col gap-5"
+      >
+        <basis core="print" datamembername="db.bannerimage">
+          <face filter="image is null">
+            <img
+              fetchpriority="high"
+              src="[##cms.cms.cdn##]/images/tour-list.webp"
+              alt="@title"
+              width="1585"
+              height="273"
+              class="w-full z-0 h-full object-cover absolute top-0 left-0"
+            />
+          </face>
+          <face>
+            <img
+              fetchpriority="high"
+              width="2808"
+              height="273"
+              src="@image"
+              alt="@title"
+              class="w-full z-0 h-full object-cover absolute top-0 left-0"
+            />
+          </face>
+        </basis>
+        <span
+          class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"
+        ></span>
+        <ul class="flex z-10 text-xs items-center gap-[2px] !text-white">
+          <li>
+            <a href="/" class="text-xs hover:!text-primary-100">صفحه اصلی</a>
+          </li>
+          <li>/</li>
+          <basis core="print" datamembername="db.navigation">
+            <face filter="RowNumber=max(RowNumber) and parentcatid<>152285">
+              <li
+                class="text-xs"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem"
+              >
+                <span itemprop="name">@title</span
+                ><meta itemprop="position" content="@rownumber" />
+              </li>
+            </face>
+            <face filter="link is null and parentcatid<>152285">
+              <li
+                class="hover:!text-primary-100 text-xs"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem"
+              >
+                <a
+                  class="hover:!text-primary-100 text-xs"
+                  itemprop="item"
+                  href="/tour-list.bc?catid=@parentcatid"
+                  aria-label="@title"
+                  ><span itemprop="name">@title</span
+                  ><meta itemprop="position" content="@rownumber"
+                /></a>
+                <span class="text-white text-xs"> / </span>
+              </li>
+            </face>
+            <face filter="parentcatid<>152285">
+              <li
+                class="hover:!text-primary-100 text-xs"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem"
+              >
+                <a
+                  class="hover:!text-primary-100 text-xs"
+                  itemprop="item"
+                  href="@link"
+                  aria-label="@title"
+                  ><span class="hover:!text-primary-100 text-xs" itemprop="name"
+                    >@title</span
+                  ><meta itemprop="position" content="@rownumber"
+                /></a>
+                <span class=""> / </span>
+              </li>
+            </face>
+          </basis>
+        </ul>
+        <basis core="print" datamembername="db.scalar">
+          <face>
+            <h1 class="text-white z-10 text-4xl font-bold">@column1</h1>
+          </face>
+        </basis>
+      </section>
+      <section
+        class="w-full flex justify-center items-center h-[78px] mb-4 shadow-st"
+      >
+        <div
+          class="flex px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-between items-center"
+        >
+          <ul class="flex btn-container items-center gap-2">
+            <li
+              class="flex all-btn hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 px-[24px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]"
+            >
+              پیش فرض
+            </li>
+            <li
+              class="flex soon-btn hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 px-[24px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]"
+            >
+              نزدکترین زمان
+            </li>
+            <li
+              class="flex popular-btn hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 px-[24px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]"
+            >
+              محبوب ترین تور
+            </li>
+            <li
+              class="flex discount-btn hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 px-[24px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]"
+            >
+              تخفیف دار
+            </li>
+          </ul>
+          <div class="text-zinc-900">
+            <basis core="print" datamembername="tour.cat-tours">
+              <face filter="catid=[##cms.query.catid##]"> <span class="item_count">@countid</span> </face>
+            </basis>
+            مورد</div
+          >
+        </div>
+      </section>
+      <section class="w-full flex justify-center py-5">
+        <div
+          class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6"
+        >
+          <div
+            id="no-results-message"
+            class="text-center text-primary-900 font-bold py-4 hidden"
+          >
+            موردی یافت نشد
+          </div>
+
+          <basis core="print" datamembername="db.tour-list">
+            <else-layout>
+              <div class="text-center text-primary-900 font-bold py-4">
+                موردی یافت نشد
+              </div>
+            </else-layout>
+            <layout>
+              <div class="w-full grid grid-cols-4 gap-3">@child</div>
+            </layout>
+            <face>
+              <div
+                class="rounded-xl p-[1px] linear4 overflow-hidden !h-[465px]"
+              >
+                <div class="hidden popular-tour">@prp_3087943</div>
+                <div class="hidden soon">@prp_3087942</div>
+                <div class="hidden discount">@prp_3087944</div>
+
+                <a
+                  href="@link"
+                  class="w-full px-2 py-3 rounded-xl linear3 group h-full relative gap-2 flex flex-col"
+                >
+                  <div
+                    class="w-full absolute flex flex-col items-end gap-2 right-0 pt-3 px-4"
+                  >
+                    <div
+                      class="h-[44px] shadow-cs group-hover:bg-primary-900 transition-all duration-500 ease-in-out w-full flex justify-between p-3 items-center rounded-lg bg-white"
+                    >
+                      <span class="text-xs text-zinc-500 group-hover:text-white"
+                        >قیمت از:</span
+                      >
+                      <span class="text-sm group-hover:text-white">
+                        @prp_8181</span
+                      >
+                    </div>
+                    <span
+                      class="min-w-[77px] property transition-all duration-500 ease-in-out group-hover:bg-primary-900 h-[34px] flex justify-center items-center rounded-lg text-white bg-primary-200"
+                      >@prp_3087945</span
+                    >
+                  </div>
+                  <img
+                    loading="lazy"
+                    src="@00295X00349prp"
+                    alt="@title"
+                    width="295"
+                    height="349"
+                    class="w-full object-cover h-[349px] rounded-xl border border-white"
+                  />
+                  <p class="font-bold line-clamp-1">@title</p>
+                  <div class="flex w-full justify-between items-center">
+                    <div class="flex items-center gap-6">
+                      <div class="flex items-center gap-2">
+                        <img
+                          loading="lazy"
+                          src="[##cms.cms.cdn##]/images/date-1.png"
+                          alt="calendar-icon"
+                          class="size-5"
+                          width="30"
+                          height="30"
+                        />
+                        <p class="text-primary-900 text-xs whitespace-nowrap">
+                          @date
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img
+                          loading="lazy"
+                          src="[##cms.cms.cdn##]/images/Circle-Clock.png"
+                          alt="Clock-icon"
+                          class="size-5"
+                          width="30"
+                          height="30"
+                        />
+                        <p
+                          class="text-primary-900 w-[79px] text-xs line-clamp-1"
+                        >
+                          @prp_8076
+                        </p>
+                      </div>
+                    </div>
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        width="48"
+                        height="48"
+                        rx="24"
+                        fill="#0C92FF"
+                        class="group-hover:fill-primary-900 transition-all duration-500 ease-in-out"
+                      />
+                      <path
+                        d="M18.6464 23.6464C18.4512 23.8417 18.4512 24.1583 18.6464 24.3536L21.8284 27.5355C22.0237 27.7308 22.3403 27.7308 22.5355 27.5355C22.7308 27.3403 22.7308 27.0237 22.5355 26.8284L19.7071 24L22.5355 21.1716C22.7308 20.9763 22.7308 20.6597 22.5355 20.4645C22.3403 20.2692 22.0237 20.2692 21.8284 20.4645L18.6464 23.6464ZM29 24V23.5H19V24V24.5H29V24Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </face>
+          </basis>
+
+          <div
+            id="paging-cn"
+            class="w-full flex gap-4 justify-center items-center"
+          >
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@sta='pre')">
+                <a
+                  class="w-12 h-12 rounded-full flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  aria-label="angle-left"
+                >
+                  <svg
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.25 12.7743L19.25 12.7743"
+                      stroke="#03004E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="group-hover:stroke-white"
+                    ></path>
+                    <path
+                      d="M10.3008 18.7987L4.25078 12.7747L10.3008 6.74969"
+                      stroke="#03004E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="group-hover:stroke-white"
+                    ></path>
+                  </svg>
+                </a>
+              </face>
+            </basis>
+
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@page=[##cms.query.pagenum|(1)##])">
+                <a
+                  class="w-12 h-12 text-primary-900 rounded-full hover:text-white flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                >
+                  @page
+                </a>
+              </face>
+              <face
+                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')"
+              >
+                <a
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  class="w-12 h-12 text-primary-900 rounded-full hover:text-white flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
+                >
+                  @page
+                </a>
+              </face>
+            </basis>
+
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@sta='nex')">
+                <a
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  aria-label="angle-right"
+                  class="w-12 h-12 rounded-full rotate-180 flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
+                >
+                  <svg
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.25 12.7743L19.25 12.7743"
+                      stroke="#03004E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="group-hover:stroke-white"
+                    ></path>
+                    <path
+                      d="M10.3008 18.7987L4.25078 12.7747L10.3008 6.74969"
+                      stroke="#03004E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="group-hover:stroke-white"
+                    ></path>
+                  </svg>
+                </a>
+              </face>
+            </basis>
+          </div>
+
+          <basis core="print" datamembername="db.aid-text">
+            <layout>
+              <div class="flex flex-col aid-text gap-2">@child</div>
+            </layout>
+            <face filter="TypeID<>128 and TypeID<>159">
+              <p class="text-2xl text-zinc-900">@text</p>
+              <div class="text-base text-zinc-900">@largetext</div>
+            </face>
+          </basis>
+
+          <div class="w-full mt-5 mb-8 flex gap-[59px]">
+            <div class="w-fit flex gap-[27px] items-end">
+              <basis core="print" datamembername="db.gallery">
+                <face filter="RowNumber=1">
+                  <div class="w-full h-[486px]">
+                    <img
+                      loading="lazy"
+                      src="@largeIMG"
+                      alt="@name"
+                      class="w-full h-full rounded-[20px] object-cover"
+                    />
+                  </div>
+                </face>
+                 
+              </basis>
+            </div>
+            <div class="w-[60%] flex flex-col gap-4 pt-[68px]">
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  src="[##cms.cms.cdn##]/images/logo.png"
+                  alt="logo"
+                  width="83"
+                  height="72"
+                  class="w-[55px] h-12"
+                />
+                <basis core="print" datamembername="db.about-us-article">
+                  <face filter="TypeID=150">
+                    <p class="text-xl font-bold">@text</p>
+                  </face>
+                </basis>
+              </div>
+              <basis core="print" datamembername="db.about-us-article">
+                <face filter="TypeID=129">
+                  <div class="mb-8">@largetext</div>
+                </face>
+              </basis>
+              <!-- <div class="flex items-center gap-2">
+              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
+              <p class="text-base">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده
+              </p>
+            </div> -->
+              <!-- <div class="flex items-center gap-2">
+              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
+              <p class="text-base">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده
+              </p>
+            </div> -->
+              <!-- <div class="flex items-center gap-2">
+              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
+              <p class="text-base">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده
+              </p>
+            </div> -->
+              <div class="w-full flex justify-between mt-7 items-center">
+                <basis core="print" datamembername="db.about-us-article">
+                  <face filter="TypeID=250">
+                    <article class="flex flex-col gap-3">
+                      <div class="text-primary-300  flex items-center justify-center no-change font-bold text-4xl">
+                        @largetext
+                      </div>
+                      <div class="text-sm text-primary-300">@text</div>
+                    </article>
+                  </face>
+                </basis>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

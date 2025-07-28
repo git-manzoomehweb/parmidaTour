@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>
+      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری پارمیدا سیر پارس)##]
+    </title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  پارمیدا سیر پارس)##]"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <basis core="call" file="header.inc" />
+    <main class="flex justify-center items-center my-28 flex-col gap-3">
+      <img
+        src="[##cms.cms.cdn##]/images/500.svg"
+        alt="500"
+        width="444"
+        height="358"
+        class="w-[299px]"
+      />
+      <h1 class="">ارتباط با سرور به مشکل مواجه شد</h1>
+      <a
+        href="/"
+        class="w-[221px] h-12 flex justify-center items-center bg-primary-950 text-white hover:bg-primary-300 rounded-[50px]"
+        >بازگشت به صفحه اصلی</a
+      >
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+  </body>
+</html>

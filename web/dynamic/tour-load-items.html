@@ -1,0 +1,185 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="1"
+  mid="20"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="tours-list"
+    link="tour.bc"
+    type="list"
+    propertyid=" 3087425,3087945, 3087422 , 3087423 , 3087424 ,3087428,8181,10000504,8076"
+    perpage=""
+    typeid="159"
+    size="295x349"
+    order="ord"
+  />
+</basis>
+<basis core="print" datamembername="db.tours-list">
+  <else-layout> <p class="text-primary-900">موردی یافت نشد ❗</p></else-layout>
+  <layout>@child</layout>
+  <face filter="link is null">
+    <div
+      class="swiper-slide w-311 rounded-xl p-[1px] linear4 overflow-hidden !h-[465px]"
+    >
+      <a
+        href="/tour.bc?lid=1&id=@id"
+        class="w-full px-2 py-3 rounded-xl linear3 group h-full relative gap-2 flex flex-col"
+      >
+        <div
+          class="w-full absolute flex flex-col items-end gap-2 right-0 pt-3 px-4"
+        >
+          <div
+            class="h-[44px] shadow-cs group-hover:bg-primary-900 transition-all duration-500 ease-in-out w-full flex justify-between p-3 items-center rounded-lg bg-white"
+          >
+            <span class="text-xs text-zinc-500 group-hover:text-white"
+              >قیمت از:</span
+            >
+            <span class="text-sm group-hover:text-white"> @prp_8181</span>
+          </div>
+          <span
+            class="min-w-[77px] property transition-all duration-500 ease-in-out group-hover:bg-primary-900 h-[34px] flex justify-center items-center rounded-lg text-white bg-primary-200"
+            >@prp_3087945</span
+          >
+        </div>
+        <img
+          loading="lazy"
+          src="@00295X00349prp"
+          alt="@title"
+          width="295"
+          height="349"
+          class="w-full object-cover h-[349px] rounded-xl border border-white"
+        />
+        <p class="font-bold line-clamp-1">@title</p>
+        <div class="flex w-full justify-between items-center">
+          <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/date-1.png"
+                alt="calendar-icon"
+                class="size-5"
+                width="30"
+                height="30"
+              />
+              <p class="text-primary-900 text-xs">@date</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/Circle-Clock.png"
+                alt="Clock-icon"
+                class="size-5"
+                width="30"
+                height="30"
+              />
+              <p class="text-primary-900 text-xs line-clamp-1">@prp_8076</p>
+            </div>
+          </div>
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="48"
+              height="48"
+              rx="24"
+              fill="#0C92FF"
+              class="group-hover:fill-primary-900 transition-all duration-500 ease-in-out"
+            />
+            <path
+              d="M18.6464 23.6464C18.4512 23.8417 18.4512 24.1583 18.6464 24.3536L21.8284 27.5355C22.0237 27.7308 22.3403 27.7308 22.5355 27.5355C22.7308 27.3403 22.7308 27.0237 22.5355 26.8284L19.7071 24L22.5355 21.1716C22.7308 20.9763 22.7308 20.6597 22.5355 20.4645C22.3403 20.2692 22.0237 20.2692 21.8284 20.4645L18.6464 23.6464ZM29 24V23.5H19V24V24.5H29V24Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </a>
+    </div>
+  </face>
+  <face>
+    <div
+      class="swiper-slide w-311 rounded-xl p-[1px] linear4 overflow-hidden !h-[465px]"
+    >
+      <a
+        href="@link"
+        class="w-full px-2 py-3 rounded-xl linear3 group h-full relative gap-2 flex flex-col"
+      >
+        <div
+          class="w-full absolute flex flex-col items-end gap-2 right-0 pt-3 px-4"
+        >
+          <div
+            class="h-[44px] shadow-cs group-hover:bg-primary-900 transition-all duration-500 ease-in-out w-full flex justify-between p-3 items-center rounded-lg bg-white"
+          >
+            <span class="text-xs text-zinc-500 group-hover:text-white"
+              >قیمت از:</span
+            >
+            <span class="text-sm group-hover:text-white"> @prp_8181</span>
+          </div>
+          <span
+            class="min-w-[77px] property transition-all duration-500 ease-in-out group-hover:bg-primary-900 h-[34px] flex justify-center items-center rounded-lg text-white bg-primary-200"
+            >@prp_3087945</span
+          >
+        </div>
+        <img
+          loading="lazy"
+          src="@00295X00349prp"
+          alt="@title"
+          width="295"
+          height="349"
+          class="w-full object-cover h-[349px] rounded-xl border border-white"
+        />
+        <p class="font-bold line-clamp-1">@title</p>
+        <div class="flex w-full justify-between items-center">
+          <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/date-1.png"
+                alt="calendar-icon"
+                class="size-5"
+                width="30"
+                height="30"
+              />
+              <p class="text-primary-900 text-xs">@date</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/Circle-Clock.png"
+                alt="Clock-icon"
+                class="size-5"
+                width="30"
+                height="30"
+              />
+              <p class="text-primary-900 text-xs line-clamp-1">@prp_8076</p>
+            </div>
+          </div>
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="48"
+              height="48"
+              rx="24"
+              fill="#0C92FF"
+              class="group-hover:fill-primary-900 transition-all duration-500 ease-in-out"
+            />
+            <path
+              d="M18.6464 23.6464C18.4512 23.8417 18.4512 24.1583 18.6464 24.3536L21.8284 27.5355C22.0237 27.7308 22.3403 27.7308 22.5355 27.5355C22.7308 27.3403 22.7308 27.0237 22.5355 26.8284L19.7071 24L22.5355 21.1716C22.7308 20.9763 22.7308 20.6597 22.5355 20.4645C22.3403 20.2692 22.0237 20.2692 21.8284 20.4645L18.6464 23.6464ZM29 24V23.5H19V24V24.5H29V24Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </a>
+    </div>
+  </face>
+</basis>
