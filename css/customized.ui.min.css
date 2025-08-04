@@ -569,7 +569,7 @@ main {
 }
 .cstm-drp {
   padding: 0.9rem 0.5rem;
-  z-index: 30 !important;
+  z-index: 35 !important;
 }
 .cstm-drp.mega-menu {
   z-index: 100 !important;
@@ -1104,6 +1104,12 @@ li.have-before:hover::before {
 }
 .countries-container li {
   width: calc(33.33% - 13px);
+}
+.countries-container li a {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 @media (min-width: 1280px) {
   .xl\:\!w-\[1280px\] {
@@ -2021,6 +2027,9 @@ span {
   align-items: center;
 }
 @media (min-width: 1024px) {
+  .countries-container li a {
+    width: 80px !important;
+  }
   #search-box .FlightClass.hidden-box {
     border-radius: 0.25rem !important;
     border: 1px solid #737373 !important;
@@ -2512,7 +2521,7 @@ span {
   }
   li.have-before::before {
     position: absolute;
-    right: 17px;
+    right: 7px;
   }
   .passenger-birthday-dropdown {
     z-index: 100000 !important;

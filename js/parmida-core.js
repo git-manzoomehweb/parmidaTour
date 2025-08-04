@@ -841,58 +841,63 @@ document.addEventListener("DOMContentLoaded", function () {
     discount: document.querySelector(".discount-btn"),
   };
   const itemCountEl = document.querySelector(".item_count");
+  const noResultsMessage = document.getElementById("no-results-message");
+  const pagingCn = document.querySelector("#paging-cn");
 
-  if (cards.length >= 1) {
-    const noResultsMessage = document.getElementById("no-results-message");
+  function showCards(filterClass = null) {
+    let visibleCount = 0;
 
-    function showCards(filterClass = null) {
-      let visibleCount = 0;
+    cards.forEach((card, index) => {
+      if (!filterClass) {
+        // حالت all
+        card.style.display = "flex";
+        visibleCount++;
+        // console.log(`✅ کارت ${index + 1} نمایش داده شد (all mode)`);
+        itemCountEl.innerText = `${index + 1}`;
+      } else {
+        // حالت فیلتر خاص
+        const filterElement = card.querySelector(`.${filterClass}`);
 
-      cards.forEach((card) => {
-        if (!filterClass) {
+        // آیا المنت فیلتر وجود دارد و چیزی برای نمایش دارد؟
+        const hasContent =
+          filterElement &&
+          (filterElement.textContent.trim().length > 0 ||
+            filterElement.children.length > 0);
+
+        if (hasContent) {
           card.style.display = "flex";
+          card.classList.add("counterrr");
           visibleCount++;
         } else {
-          const filterElement = card.querySelector(`.${filterClass}`);
-          const hasContent =
-            filterElement &&
-            (filterElement.textContent.trim().length > 0 ||
-              filterElement.children.length > 0);
-
-          if (hasContent) {
-            card.style.display = "flex";
-            visibleCount++;
-          } else {
-            card.style.display = "none";
-          }
+          card.style.display = "none";
         }
-      });
-
-      // ✅ شمارش داینامیک همه کارت‌ها (نه بر اساس مقدار قبلی)
-      if (itemCountEl) {
-        const totalVisible = cards.filter(card => card.style.display !== "none").length;
-        itemCountEl.textContent = totalVisible;
       }
+    });
 
-      if (visibleCount === 0) {
-        noResultsMessage.classList.remove("hidden");
-        document.querySelector("#paging-cn").classList.add("hidden");
-      } else {
-        noResultsMessage.classList.add("hidden");
-        document.querySelector("#paging-cn").classList.remove("hidden");
-      }
+    // به‌روزرسانی شمارش
+    if (itemCountEl) {
+      itemCountEl.textContent = visibleCount;
     }
 
-    // شمارش اولیه در اولین بار که صفحه لود می‌شود
-    showCards(); // برای اعمال شمارش داینامیک اولیه
-
-    buttons.all?.addEventListener("click", () => showCards());
-    buttons.soon?.addEventListener("click", () => showCards("soon"));
-    buttons.popular?.addEventListener("click", () => showCards("popular-tour"));
-    buttons.discount?.addEventListener("click", () => showCards("discount"));
+    // مدیریت پیام "نتیجه‌ای یافت نشد"
+    if (visibleCount === 0) {
+      noResultsMessage?.classList.remove("hidden");
+      pagingCn?.classList.add("hidden");
+    } else {
+      noResultsMessage?.classList.add("hidden");
+      pagingCn?.classList.remove("hidden");
+    }
   }
-});
 
+  // شمارش اولیه در اولین بار که صفحه لود می‌شود
+  showCards(); // حالت all
+
+  // تنظیم دکمه‌ها
+  buttons.all?.addEventListener("click", () => showCards());
+  buttons.soon?.addEventListener("click", () => showCards("soon"));
+  buttons.popular?.addEventListener("click", () => showCards("popular-tour"));
+  buttons.discount?.addEventListener("click", () => showCards("discount"));
+});
 
 const fLists = document.querySelectorAll("ul.flex.btn-container li");
 if (fLists[0]) {
@@ -1044,12 +1049,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!headerB) return;
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 410) {
+    if (window.scrollY > 1500) {
       headerB.style.position = "fixed";
       headerB.style.top = "0";
       headerB.style.left = "0";
       headerB.style.width = "100%";
-      headerB.style.zIndex = "70";
+      headerB.style.zIndex = "80";
       headerB.style.boxShadow = "0px 4px 20px 0px #27272714";
     } else {
       headerB.style.position = "";
@@ -1282,11 +1287,9 @@ document.querySelectorAll(".h-4-5r").forEach((hoverTarget) => {
     megaMenu.style.setProperty("display", "none", "important");
   }
 
- 
   hoverTarget.addEventListener("mouseenter", showMegaMenu);
   megaMenu.addEventListener("mouseenter", showMegaMenu);
 
- 
   hoverTarget.addEventListener("mouseleave", () => {
     setTimeout(() => {
       if (!hoverTarget.matches(":hover") && !megaMenu.matches(":hover")) {
