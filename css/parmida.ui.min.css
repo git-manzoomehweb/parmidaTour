@@ -1052,6 +1052,17 @@ body.tour .tour-bg {
   text-decoration: underline !important;
   color: var(--primary-700) !important;
 }
+
+.aid-text h1,
+.aid-text h2,
+.aid-text h3,
+.aid-text h4,
+.aid-text h5,
+.aid-text h6{
+  font-size: revert;
+  font-weight: revert;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }

@@ -2311,3 +2311,13 @@ input {
 header.w-full {
   position: unset !important;
 }
+
+.article-description-main h1,
+.article-description-main h2,
+.article-description-main h3,
+.article-description-main h4,
+.article-description-main h5,
+.article-description-main h6{
+  font-size: revert;
+  font-weight: revert;
+}
