@@ -1,136 +1,56 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="20"
-  name="products-header"
->
-  <member
-    name="cat"
-    type="tree"
-    request="cat"
-    parentid="215371"
-    order="ord"
-  ></member>
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="products-header">
+  <member name="cat" type="tree" request="cat" parentid="215371" order="ord"></member>
 </basis>
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="1"
-  name="articles-header"
->
-  <member
-    name="cat"
-    type="tree"
-    request="cat"
-    parentid="152303"
-    order="ord"
-  ></member>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="articles-header">
+  <member name="cat" type="tree" request="cat" parentid="152303" order="ord"></member>
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="5"
-  lid="1"
-  usedforid="[##cms.cms.ownerid##]"
->
+<basis core="dbsource" source="basiscore" name="db" mid="5" lid="1" usedforid="[##cms.cms.ownerid##]">
   <member name="info" type="view"></member>
 </basis>
 
 <header class="w-full">
   <div class="w-full h-12 flex justify-center bg-primary-900">
-    <div
-      class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex items-center justify-between"
-    >
+    <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex items-center justify-between">
       <div class="flex items-center gap-1">
         <basis core="print" datamembername="db.info">
           <face filter="text in('واتس اپ')">
-            <a
-              href="@largetext"
-              target="_blank"
-              rel="noopener"
-              aria-label="@text"
-              class="transition-all max-lg:!hidden hover:scale-125"
-            >
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+            <a href="@largetext" target="_blank" rel="noopener" aria-label="@text"
+              class="transition-all max-lg:!hidden hover:scale-125">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M26.5109 26.5668L26.4079 26.4958C26.1989 26.3498 25.9099 26.3688 25.7369 26.5408L25.5049 26.7748C25.2629 27.0208 24.8819 27.0678 24.5849 26.8898C23.4329 26.1958 22.8579 25.5258 22.1389 24.4568C21.9419 24.1628 21.9769 23.7698 22.2239 23.5158L22.4569 23.2758C22.6399 23.0888 22.6619 22.8098 22.5129 22.5928C22.3539 22.3708 22.1989 22.1478 22.0509 21.9348C21.9649 21.8128 21.8239 21.7328 21.6689 21.7198C21.6559 21.7188 21.6409 21.7178 21.6239 21.7178C21.5299 21.7178 21.3859 21.7438 21.2619 21.8688L21.1369 21.9948L21.1339 21.9978C20.0719 23.0628 21.2189 24.9688 22.6469 26.3978C24.0569 27.8028 25.9449 28.9308 27.0069 27.8668L27.1539 27.7288C27.2829 27.5978 27.2919 27.4228 27.2839 27.3328C27.2759 27.2418 27.2369 27.0728 27.0659 26.9538C26.8819 26.8218 26.7009 26.6978 26.5109 26.5668Z"
-                  fill="white"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M28.194 28.8073L28.046 28.9473C27.466 29.5243 26.765 29.8093 25.984 29.8093C24.676 29.8093 23.144 29.0133 21.585 27.4593C19.109 24.9833 18.528 22.4853 20.067 20.9403L20.194 20.8123C20.619 20.3863 21.211 20.1703 21.795 20.2253C22.393 20.2773 22.933 20.5873 23.278 21.0773C23.424 21.2883 23.576 21.5053 23.738 21.7313C24.242 22.4613 24.219 23.4123 23.717 24.1013C24.076 24.5903 24.41 24.9513 24.886 25.2963C25.578 24.7793 26.533 24.7573 27.26 25.2633L27.359 25.3303C27.558 25.4683 27.748 25.5983 27.93 25.7303C28.411 26.0643 28.722 26.6023 28.776 27.1983C28.83 27.7963 28.617 28.3823 28.194 28.8073ZM33.33 23.1963C32.618 19.4093 29.594 16.3863 25.807 15.6763C22.994 15.1473 20.133 15.8853 17.951 17.6953C15.757 19.5153 14.5 22.1803 14.5 25.0083C14.5 26.4303 14.824 27.8433 15.462 29.2043C15.514 29.3223 15.53 29.4413 15.506 29.5513C15.35 30.2603 15.023 31.6873 14.787 32.7073C14.688 33.1383 14.818 33.5783 15.132 33.8833C15.443 34.1853 15.883 34.3043 16.303 34.1933C17.254 33.9533 18.557 33.6343 19.375 33.4433C19.482 33.4183 19.6 33.4333 19.723 33.4943C21.042 34.1583 22.521 34.5083 24 34.5083C26.826 34.5083 29.49 33.2513 31.308 31.0603C33.121 28.8773 33.857 26.0103 33.33 23.1963Z"
-                  fill="white"
-                /></svg
-            ></a>
+                  fill="white" />
+              </svg></a>
           </face>
         </basis>
 
         <basis core="print" datamembername="db.info">
           <face filter="text in('اینستاگرام')">
-            <a
-              href="@largetext"
-              target="_blank"
-              rel="noopener"
-              aria-label="@text"
-              class="transition-all hover:scale-125"
-            >
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+            <a href="@largetext" target="_blank" rel="noopener" aria-label="@text"
+              class="transition-all hover:scale-125">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M23.8468 21.5889C22.3288 21.5889 21.0938 22.8219 21.0938 24.3389C21.0938 25.8559 22.3288 27.0889 23.8468 27.0889C25.3648 27.0889 26.5988 25.8559 26.5988 24.3389C26.5988 22.8219 25.3648 21.5889 23.8468 21.5889Z"
-                  fill="white"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M28.864 20.4178C28.294 20.4178 27.829 19.9558 27.829 19.3888C27.829 18.8198 28.294 18.3578 28.864 18.3578C29.434 18.3578 29.898 18.8198 29.898 19.3888C29.898 19.9558 29.434 20.4178 28.864 20.4178ZM23.844 28.5888C21.5 28.5888 19.592 26.6828 19.592 24.3388C19.592 21.9948 21.5 20.0888 23.844 20.0888C26.189 20.0888 28.096 21.9948 28.096 24.3388C28.096 26.6828 26.189 28.5888 23.844 28.5888ZM28.217 14.5088H19.782C16.623 14.5088 14.5 16.7308 14.5 20.0388V27.9788C14.5 31.2858 16.623 33.5088 19.782 33.5088H28.216C31.376 33.5088 33.5 31.2858 33.5 27.9788V20.0388C33.5 16.7308 31.377 14.5088 28.217 14.5088Z"
-                  fill="white"
-                /></svg
-            ></a>
+                  fill="white" />
+              </svg></a>
           </face>
         </basis>
 
         <basis core="print" datamembername="db.info">
           <face filter="text in('توییتر')">
-            <a
-              href="@largetext"
-              target="_blank"
-              rel="noopener"
-              aria-label="@text"
-              class="transition-all max-lg:!hidden hover:scale-125"
-              ><svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+            <a href="@largetext" target="_blank" rel="noopener" aria-label="@text"
+              class="transition-all max-lg:!hidden hover:scale-125"><svg width="48" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M33.422 17.1646C33.316 16.9986 33.124 16.9056 32.926 16.9386L30.923 17.2366C30.358 16.6046 28.628 14.9926 26.241 15.7146C24.174 16.3486 23.19 18.5466 23.131 20.2246C20.568 19.7546 18.176 18.4926 16.344 16.6326C16.213 16.4996 16.018 16.4506 15.838 16.5066C15.658 16.5626 15.526 16.7146 15.495 16.8996C14.58 22.3426 15.762 25.9756 19.212 28.2556C17.931 28.9616 16.462 29.3246 15.016 29.2726C14.818 29.2716 14.637 29.3766 14.551 29.5536C14.464 29.7296 14.49 29.9406 14.616 30.0926C16.098 31.8746 18.89 32.4856 21.115 32.4856C21.372 32.4856 21.621 32.4776 21.86 32.4626C25.1 32.2606 27.771 30.9226 29.584 28.5916C31.301 26.3846 32.132 23.3516 31.923 20.0266L31.917 19.9776L33.417 17.7086C33.526 17.5446 33.528 17.3306 33.422 17.1646Z"
-                  fill="white"
-                />
+                  fill="white" />
               </svg>
             </a>
           </face>
@@ -138,257 +58,130 @@
 
         <basis core="print" datamembername="db.info">
           <face filter="text in('تلگرام')">
-            <a
-              href="@largetext"
-              target="_blank"
-              rel="noopener"
-              aria-label="@text"
-              class="transition-all max-lg:!hidden hover:scale-125"
-              ><svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+            <a href="@largetext" target="_blank" rel="noopener" aria-label="@text"
+              class="transition-all max-lg:!hidden hover:scale-125"><svg width="48" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M24.5558 28.78L22.2518 30.921C21.9698 31.184 21.5108 30.968 21.5368 30.583C21.6088 29.495 21.7208 27.842 21.7958 26.923C21.8078 26.778 21.9298 26.616 22.0458 26.511C24.7368 24.071 27.4338 21.637 30.1298 19.201C30.2298 19.111 30.3478 18.889 30.2858 18.772C30.2158 18.64 29.8928 18.68 29.7588 18.764C26.3348 20.92 22.9108 23.075 19.4918 25.238C19.2818 25.37 19.0248 25.402 18.7888 25.326C17.3788 24.873 15.9608 24.444 14.5478 23.998C14.2228 23.895 13.8368 23.793 13.7998 23.39C13.7608 22.969 14.1218 22.769 14.4478 22.638C15.7618 22.108 17.0848 21.601 18.4058 21.091C23.1578 19.26 27.9098 17.43 32.6618 15.6C32.8208 15.539 33.0328 15.501 33.1988 15.468C33.6968 15.368 34.1448 15.618 34.1938 16.122C34.2308 16.491 34.1658 16.902 34.0888 17.267C33.0988 21.976 32.0958 26.683 31.0938 31.391C30.8238 32.663 30.1698 32.904 29.1168 32.127C27.7598 31.125 24.5558 28.78 24.5558 28.78Z"
-                  fill="white"
-                />
+                  fill="white" />
               </svg>
             </a>
           </face>
         </basis>
       </div>
-      <a
-        href="tel:02122922017"
-        class="flex items-center gap-2 h-fit p-2 rounded hover:bg-white transition-all hover:text-primary-900 group text-white"
-      >
+      <a href="tel:02122922017"
+        class="flex items-center gap-2 h-fit p-2 rounded hover:bg-white transition-all hover:text-primary-900 group text-white">
         02122922017
-        <svg
-          width="21"
-          height="21"
-          viewBox="0 0 21 21"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
             d="M2.35917 3.06033C2.36117 3.06033 2.31117 3.11233 2.24817 3.17433C2.00617 3.40933 1.50517 3.89833 1.50012 4.92133C1.49217 6.35233 2.43317 9.00933 6.96417 13.5393C11.4742 18.0473 14.1272 18.9993 15.5612 18.9993H15.5822C16.6052 18.9943 17.0932 18.4923 17.3292 18.2513C17.4012 18.1773 17.4592 18.1233 17.5002 18.0893C18.4962 17.0873 19.0062 16.3413 19.0012 15.8633C18.9942 15.3753 18.3872 14.7983 17.5482 14.0003C17.2812 13.7463 16.9912 13.4703 16.6852 13.1643C15.8922 12.3733 15.4992 12.5083 14.6352 12.8123C13.4402 13.2313 11.8002 13.8013 9.25217 11.2523C6.70017 8.70233 7.27117 7.06433 7.68917 5.86933C7.99117 5.00533 8.12917 4.61133 7.33517 3.81733C7.02417 3.50733 6.74517 3.21333 6.48817 2.94333C5.69517 2.10933 5.12317 1.50633 4.63817 1.49933H4.63017C4.15117 1.49933 3.40717 2.01133 2.35417 3.06433C2.35717 3.06133 2.35917 3.06033 2.35917 3.06033ZM15.5622 20.4993C13.0702 20.4993 9.82117 18.5153 5.90417 14.6003C1.97217 10.6693 -0.0148324 7.41033 8.33525e-05 4.91333C0.00916765 3.26333 0.874168 2.41833 1.19917 2.10133C1.21617 2.08033 1.27417 2.02333 1.29417 2.00333C2.72817 0.568326 3.69517 -0.0116741 4.65717 -0.000827425C5.77417 0.0143259 6.56917 0.850326 7.57517 1.90933C7.82417 2.17133 8.09417 2.45633 8.39517 2.75633C9.85517 4.21633 9.43917 5.40733 9.10517 6.36333C8.74117 7.40633 8.42617 8.30633 10.3122 10.1923C12.2002 12.0783 13.1002 11.7633 14.1392 11.3963C15.0962 11.0623 16.2842 10.6443 17.7462 12.1043C18.0422 12.4003 18.3232 12.6673 18.5822 12.9143C19.6462 13.9253 20.4862 14.7243 20.5004 15.8443C20.5122 16.7993 19.9322 17.7723 18.5002 19.2053L17.8662 18.7753L18.4022 19.2993C18.0852 19.6243 17.2412 20.4903 15.5902 20.4993H15.5622Z"
-            fill="white"
-            class="group-hover:fill-primary-900"
-          />
+            fill="white" class="group-hover:fill-primary-900" />
         </svg>
       </a>
     </div>
   </div>
   <div class="bg-white w-full flex justify-center h-16 items-center">
-    <div
-      class="px-5 w-full max-lg:!flex-row-reverse lg:px-5 xl:!w-[1280px] xl:!px-0 flex items-center justify-between"
-    >
+    <div class="px-5 w-full max-lg:!flex-row-reverse lg:px-5 xl:!w-[1280px] xl:!px-0 flex items-center justify-between">
       <div class="flex items-center gap-6">
         <a aria-label="parmida-logo" href="/" class="hover:drop-shadow-md">
-          <img
-            src="[##cms.cms.cdn##]/images/logo.png"
-            alt="logo"
-            width="83"
-            height="72"
-            class="w-[55px] h-12"
-          />
+          <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="83" height="72" class="w-[55px] h-12" />
         </a>
-        <a
-          href="/"
-          class="text-primary-900 max-lg:!hidden duration-500 pb-2 group relative transition-all ease-in-out overflow-hidden"
-        >
+        <a href="/"
+          class="text-primary-900 max-lg:!hidden duration-500 pb-2 group relative transition-all ease-in-out overflow-hidden">
           <span
-            class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"
-          ></span>
+            class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"></span>
           <span class="z-[1]">صفحه اصلی</span>
         </a>
 
         <div
-          class="relative group h-4-5r hidden lg:!flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
-        >
-          <a
-            href="/تورها"
-            class="text-primary-900 max-lg:!hidden flex items-center gap-3 duration-500 pb-2 relative transition-all ease-in-out overflow-hidden"
-          >
+          class="relative group h-4-5r hidden lg:!flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal">
+          <a href="/تورها"
+            class="text-primary-900 max-lg:!hidden flex items-center gap-3 duration-500 pb-2 relative transition-all ease-in-out overflow-hidden">
             <span
-              class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"
-            ></span>
+              class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"></span>
             <span class="z-[1]">تور</span>
             <span class="group-hover:rotate-180 transition-all">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M18.7518 7.4392L11.7518 14.4392L4.75183 7.4392L3.69113 8.4999L11.7518 16.5605L19.8125 8.4999L18.7518 7.4392Z"
-                  fill="#03004E"
-                ></path>
+                  fill="#03004E"></path>
               </svg>
             </span>
           </a>
 
           <div
-            class="lg:absolute mega-menu relative shadow-lg justify-between rounded hidden cstm-drp bg-white h-fit group-hover:flex gap-3 top-full"
-          >
-            <basis
-              core="tree"
-              datamembername="products-header.cat"
-              idcol="catid"
-              parentidcol="parentid"
-              nullvalue="215371"
-            >
+            class="lg:absolute mega-menu relative shadow-lg justify-between rounded hidden cstm-drp bg-white h-fit group-hover:flex gap-3 top-full">
+            <basis core="tree" datamembername="products-header.cat" idcol="catid" parentidcol="parentid"
+              nullvalue="215371">
               <layout>
                 <div class="w-full flex gap-4 container bg-white">@child</div>
               </layout>
               <face level="end" filter="link is null">
-                <a
-                  class="hover:text-primary-900 px-2 title"
-                  href="/tour-list.bc?catid=@catid"
-                  >@title</a
-                >
+                <a class="hover:text-primary-900 px-2 title" href="/tour-list.bc?catid=@catid">@title</a>
               </face>
               <face level="end">
-                <a class="hover:text-primary-900 px-2 title" href="/@link"
-                  >@title</a
-                >
+                <a class="hover:text-primary-900 px-2 title" href="/@link">@title</a>
               </face>
               <face level="1" filter="link is null">
-                <div
-                  class="group/level2 set-an-sp relative justify-between flex items-center"
-                >
-                  <a
-                    class="hover:text-primary-900 px-2 title"
-                    href="/tour-list.bc?catid=@catid"
-                    >@title
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2 title" href="/tour-list.bc?catid=@catid">@title
                   </a>
                   <span class="">
-                    <svg
-                      width="10"
-                      height="18"
-                      viewBox="0 0 10 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                        fill="#03004E"
-                        class="group-hover:fill-primary-600"
-                      ></path>
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
                     </svg>
                   </span>
                   <ul
-                    class="hidden shadow-md w-44 cstm-drp bg-white -left-44 top-0 bg-white rounded gap-4 h-fit group-hover/level2:flex flex-col absolute"
-                  >
+                    class="hidden shadow-md w-44 cstm-drp bg-white -left-44 top-0 bg-white rounded gap-4 h-fit group-hover/level2:flex flex-col absolute">
                     <div class="flex flex-col gap-2">@child</div>
                   </ul>
                 </div>
               </face>
               <face level="1">
-                <div
-                  class="group/level2 set-an-sp relative justify-between flex items-center"
-                >
-                  <a
-                    class="hover:text-primary-900 px-2"
-                    href="/tour-list.bc?catid=@catid"
-                    >@title
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2" href="/tour-list.bc?catid=@catid">@title
                   </a>
                   <span class="">
-                    <svg
-                      width="10"
-                      height="18"
-                      viewBox="0 0 10 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                        fill="#03004E"
-                        class="group-hover:fill-primary-600"
-                      ></path>
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
                     </svg>
                   </span>
                   <ul
-                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6"
-                  >
+                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
                     <div class="flex flex-col gap-2">@child</div>
                   </ul>
                 </div>
               </face>
               <face level="2" filter="link is null">
-                <div
-                  class="group/level2 set-an-sp relative justify-between flex items-center"
-                >
-                  <a
-                    class="hover:text-primary-900 px-2"
-                    href="/tour-list.bc?catid=@catid"
-                    >@title </a
-                  ><span class="">
-                    <svg
-                      width="10"
-                      height="18"
-                      viewBox="0 0 10 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2" href="/tour-list.bc?catid=@catid">@title </a><span class="">
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                        fill="#03004E"
-                        class="group-hover:fill-primary-600"
-                      ></path>
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
                     </svg>
                   </span>
                   <ul
-                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6"
-                  >
+                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
                     <div class="flex flex-col gap-2">@child</div>
                   </ul>
                 </div>
               </face>
               <face level="2">
-                <div
-                  class="group/level2 set-an-sp relative justify-between flex items-center"
-                >
-                  <a
-                    class="hover:text-primary-900 px-2"
-                    href="/tour-list.bc?catid=@catid"
-                    >@title </a
-                  ><span class="">
-                    <svg
-                      width="10"
-                      height="18"
-                      viewBox="0 0 10 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2" href="/tour-list.bc?catid=@catid">@title </a><span class="">
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                        fill="#03004E"
-                        class="group-hover:fill-primary-600"
-                      ></path>
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
                     </svg>
                   </span>
                   <ul
-                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6"
-                  >
+                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
                     <div class="flex flex-col gap-2">@child</div>
                   </ul>
                 </div>
@@ -396,321 +189,181 @@
             </basis>
             <basis core="print" datamembername="products-header.cat">
               <face filter="catid in(215371)">
-                <img
-                  class="rounded-xl"
-                  height="191"
-                  width="198"
-                  src="@image"
-                  alt="@title"
-                  loading="lazy"
-                />
+                <img class="rounded-xl" height="191" width="198" src="@image" alt="@title" loading="lazy" />
               </face>
             </basis>
           </div>
         </div>
 
-        <basis
-          core="tree"
-          datamembername="articles-header.cat"
-          idcol="catid"
-          parentidcol="parentid"
-          nullvalue="152303"
-        >
-          <layout>
-            <div
-              class="relative group hidden lg:!flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal"
-            >
-              <a
-                href="/مجله-گردشگری"
-                class="text-primary-900 max-lg:!hidden flex items-center gap-3 duration-500 pb-2 relative transition-all ease-in-out overflow-hidden"
-              >
-                <span
-                  class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"
-                ></span>
-                <span class="z-[1]">مجله گردشگری</span>
-                <span class="group-hover:rotate-180 transition-all">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M18.7518 7.4392L11.7518 14.4392L4.75183 7.4392L3.69113 8.4999L11.7518 16.5605L19.8125 8.4999L18.7518 7.4392Z"
-                      fill="#03004E"
-                    ></path>
-                  </svg>
-                </span>
-              </a>
 
-              <div
-                class="lg:absolute relative shadow-lg justify-between rounded hidden lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-full"
-              >
-                <div class="w-full flex flex-col gap-4 bg-white">@child</div>
-              </div>
-            </div>
-          </layout>
-          <face level="end" filter="link is null">
-            <a
-              class="hover:text-primary-900 px-2"
-              href="/article-list.bc?catid=@catid"
-              >@title</a
-            >
-          </face>
-          <face level="end">
-            <a class="hover:text-primary-900 px-2" href="/@link">@title</a>
-          </face>
-          <face level="1" filter="link is null">
-            <div
-              class="group/level2 set-an-sp relative justify-between flex items-center"
-            >
-              <a
-                class="hover:text-primary-900 px-2"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="">
-                <svg
-                  width="10"
-                  height="18"
-                  viewBox="0 0 10 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                    fill="#03004E"
-                    class="group-hover:fill-primary-600"
-                  ></path>
-                </svg>
-              </span>
-              <ul
-                class="hidden shadow-md w-44 cstm-drp bg-white -left-44 top-0 bg-white rounded gap-4 h-fit group-hover/level2:flex flex-col absolute"
-              >
-                @child
-              </ul>
-            </div>
-          </face>
-          <face level="1">
-            <div
-              class="group/level2 set-an-sp relative justify-between flex items-center"
-            >
-              <a
-                class="hover:text-primary-900 px-2"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="">
-                <svg
-                  width="10"
-                  height="18"
-                  viewBox="0 0 10 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                    fill="#03004E"
-                    class="group-hover:fill-primary-600"
-                  ></path>
-                </svg>
-              </span>
-              <ul
-                class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6"
-              >
-                @child
-              </ul>
-            </div>
-          </face>
-          <face level="2" filter="link is null">
-            <div
-              class="group/level2 set-an-sp relative justify-between flex items-center"
-            >
-              <a
-                class="hover:text-primary-900 px-2"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="">
-                <svg
-                  width="10"
-                  height="18"
-                  viewBox="0 0 10 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                    fill="#03004E"
-                    class="group-hover:fill-primary-600"
-                  ></path>
-                </svg>
-              </span>
-              <ul
-                class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6"
-              >
-                @child
-              </ul>
-            </div>
-          </face>
-          <face level="2">
-            <div
-              class="group/level2 set-an-sp relative justify-between flex items-center"
-            >
-              <a
-                class="hover:text-primary-900 px-2"
-                href="/article-list.bc?catid=@catid"
-                >@title
-              </a>
-              <span class="">
-                <svg
-                  width="10"
-                  height="18"
-                  viewBox="0 0 10 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
-                    fill="#03004E"
-                    class="group-hover:fill-primary-600"
-                  ></path>
-                </svg>
-              </span>
-              <ul
-                class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6"
-              >
-                @child
-              </ul>
-            </div>
-          </face>
-        </basis>
 
-        <a
-          href="/ارتباط-با-ما"
-          class="text-primary-900 max-lg:!hidden duration-500 pb-2 group relative transition-all ease-in-out overflow-hidden"
-        >
+
+
+
+
+
+
+        <div
+          class="relative group h-4-5r hidden lg:!flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal">
+          <a href="/مجله-گردشگری"
+            class="text-primary-900 max-lg:!hidden flex items-center gap-3 duration-500 pb-2 relative transition-all ease-in-out overflow-hidden">
+            <span
+              class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"></span>
+            <span class="z-[1]">مجله گردشگری</span>
+            <span class="group-hover:rotate-180 transition-all">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M18.7518 7.4392L11.7518 14.4392L4.75183 7.4392L3.69113 8.4999L11.7518 16.5605L19.8125 8.4999L18.7518 7.4392Z"
+                  fill="#03004E"></path>
+              </svg>
+            </span>
+          </a>
+
+          <div
+            class="lg:absolute mega-menu relative shadow-lg justify-between rounded hidden cstm-drp bg-white h-fit group-hover:flex gap-3 top-full">
+            <basis core="tree" datamembername="articles-header.cat" idcol="catid" parentidcol="parentid"
+              nullvalue="152303">
+              <layout>
+                <div class="w-full flex gap-4 container bg-white">@child</div>
+              </layout>
+              <face level="end" filter="link is null">
+                <a class="hover:text-primary-900 px-2 title" href="/article-list.bc?catid=@catid">@title</a>
+              </face>
+              <face level="end">
+                <a class="hover:text-primary-900 px-2 title" href="/@link">@title</a>
+              </face>
+              <face level="1" filter="link is null">
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2 title" href="/article-list.bc?catid=@catid">@title
+                  </a>
+                  <span class="">
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
+                    </svg>
+                  </span>
+                  <ul
+                    class="hidden shadow-md w-44 cstm-drp bg-white -left-44 top-0 bg-white rounded gap-4 h-fit group-hover/level2:flex flex-col absolute">
+                    <div class="flex flex-col gap-2">@child</div>
+                  </ul>
+                </div>
+              </face>
+              <face level="1">
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2" href="/article-list.bc?catid=@catid">@title
+                  </a>
+                  <span class="">
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
+                    </svg>
+                  </span>
+                  <ul
+                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
+                    <div class="flex flex-col gap-2">@child</div>
+                  </ul>
+                </div>
+              </face>
+              <face level="2" filter="link is null">
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2" href="/article-list.bc?catid=@catid">@title </a><span class="">
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
+                    </svg>
+                  </span>
+                  <ul
+                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
+                    <div class="flex flex-col gap-2">@child</div>
+                  </ul>
+                </div>
+              </face>
+              <face level="2">
+                <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                  <a class="hover:text-primary-900 px-2" href="/article-list.bc?catid=@catid">@title </a><span class="">
+                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                        fill="#03004E" class="group-hover:fill-primary-600"></path>
+                    </svg>
+                  </span>
+                  <ul
+                    class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
+                    <div class="flex flex-col gap-2">@child</div>
+                  </ul>
+                </div>
+              </face>
+            </basis>
+            <basis core="print" datamembername="articles-header.cat">
+              <face filter="catid in(152303)">
+                <img class="rounded-xl" height="191" width="198" src="@image" alt="@title" loading="lazy" />
+              </face>
+            </basis>
+          </div>
+        </div>
+
+
+        <a href="/ارتباط-با-ما"
+          class="text-primary-900 max-lg:!hidden duration-500 pb-2 group relative transition-all ease-in-out overflow-hidden">
           <span
-            class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"
-          ></span>
+            class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"></span>
           <span class="z-[1]">ارتباط با ما</span>
         </a>
       </div>
       <div class="flex gap-4 items-center">
         <button aria-label="hamber-menu" class="bars3 lg:!hidden">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
               d="M20 20H4C3.448 20 3 19.553 3 19C3 18.447 3.448 18 4 18H20C20.552 18 21 18.447 21 19C21 19.553 20.552 20 20 20Z"
-              fill="#03004E"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fill="#03004E" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
               d="M20 6H4C3.448 6 3 5.553 3 5C3 4.447 3.448 4 4 4H20C20.552 4 21 4.447 21 5C21 5.553 20.552 6 20 6Z"
-              fill="#03004E"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fill="#03004E" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
               d="M20 13H4C3.448 13 3 12.553 3 12C3 11.447 3.448 11 4 11H20C20.552 11 21 11.447 21 12C21 12.553 20.552 13 20 13Z"
-              fill="#03004E"
-            />
+              fill="#03004E" />
           </svg>
         </button>
-        <div
-          class="bg-primary-900 text-white p-3 rounded-3xl Login-information"
-        >
+        <div class="bg-primary-900 text-white p-3 rounded-3xl Login-information">
           <basis core="call" file="authentication/modal"></basis>
         </div>
       </div>
     </div>
   </div>
   <nav
-    class="header-menu transition-all ease-in-out duration-300 translate-x-[4000px] overflow-y-scroll p-6 flex flex-col gap-7 lg:!hidden fixed w-screen h-screen bg-white z-30 top-0 left-0"
-  >
+    class="header-menu transition-all ease-in-out duration-300 translate-x-[4000px] overflow-y-scroll p-6 flex flex-col gap-7 lg:!hidden fixed w-screen h-screen bg-white z-30 top-0 left-0">
     <div class="flex w-full justify-between items-center">
       <button aria-label="close-menu" class="header-menu-close">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
             d="M16.334 2C19.723 2 22 4.378 22 7.916V16.084C22 19.622 19.723 22 16.333 22H7.665C4.276 22 2 19.622 2 16.084V7.916C2 4.378 4.276 2 7.665 2H16.334ZM16.334 3.5H7.665C5.135 3.5 3.5 5.233 3.5 7.916V16.084C3.5 18.767 5.135 20.5 7.665 20.5H16.333C18.864 20.5 20.5 18.767 20.5 16.084V7.916C20.5 5.233 18.864 3.5 16.334 3.5ZM10.1305 9.0626L11.998 10.93L13.8645 9.0647C14.1575 8.7717 14.6315 8.7717 14.9245 9.0647C15.2175 9.3577 15.2175 9.8317 14.9245 10.1247L13.058 11.99L14.9265 13.8596C15.2195 14.1526 15.2195 14.6266 14.9265 14.9196C14.7805 15.0666 14.5875 15.1396 14.3965 15.1396C14.2045 15.1396 14.0125 15.0666 13.8665 14.9196L11.998 13.05L10.1325 14.9167C9.9865 15.0637 9.7945 15.1367 9.6025 15.1367C9.4105 15.1367 9.2185 15.0637 9.0725 14.9167C8.7795 14.6237 8.7795 14.1497 9.0725 13.8567L10.938 11.99L9.0705 10.1226C8.7775 9.8296 8.7775 9.3556 9.0705 9.0626C9.3645 8.7696 9.8385 8.7696 10.1305 9.0626Z"
-            fill="#71717A"
-          ></path>
+            fill="#71717A"></path>
         </svg>
       </button>
       <a aria-label="parmida-logo" href="/" class="hover:drop-shadow-md">
-        <img
-          src="[##cms.cms.cdn##]/images/logo.png"
-          alt="logo"
-          width="83"
-          height="72"
-          class="w-[55px] h-12"
-        />
+        <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="83" height="72" class="w-[55px] h-12" />
       </a>
     </div>
     <div class="flex flex-col gap-3 py-6">
       <a href="/" class="text-primary-900">صفحه اصلی</a>
 
-      <basis
-        core="tree"
-        datamembername="products-header.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="215371"
-      >
+      <basis core="tree" datamembername="products-header.cat" idcol="catid" parentidcol="parentid" nullvalue="215371">
         <layout>
           <div class="">
-            <div
-              class="flex items-center justify-between cursor-pointer toggle-dropdown"
-            >
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
               <a href="/تورها" class="text-primary-900">تورها</a>
-              <svg
-                width="48"
-                class="transition-all duration-300 dropdown-icon"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 20.5L24 27.5L17 20.5"
-                  stroke="#02004E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#02004E" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <!-- submenu -->
             <ul
-              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0"
-            >
+              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
               @child
             </ul>
             <!-- submenu end -->
@@ -719,9 +372,7 @@
 
         <face level="end" filter="link is null">
           <li class="py-4 px-4">
-            <a href="/tour-list.bc?catid=@catid" class="text-primary-900"
-              >@title</a
-            >
+            <a href="/tour-list.bc?catid=@catid" class="text-primary-900">@title</a>
           </li>
         </face>
 
@@ -733,33 +384,17 @@
 
         <face level="1" filter="link is null">
           <li class="pr-4">
-            <div
-              class="flex items-center justify-between cursor-pointer toggle-dropdown"
-            >
-              <a href="/tour-list.bc?catid=@catid" class="text-primary-900"
-                >@title</a
-              >
-              <svg
-                width="48"
-                class="transition-all duration-300 dropdown-icon"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 20.5L24 27.5L17 20.5"
-                  stroke="#181C47"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+              <a href="/tour-list.bc?catid=@catid" class="text-primary-900">@title</a>
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <!-- nested submenu -->
             <ul
-              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0"
-            >
+              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
               @child
             </ul>
             <!-- nested submenu end -->
@@ -768,31 +403,17 @@
 
         <face level="1">
           <li class="pr-4">
-            <div
-              class="flex items-center justify-between cursor-pointer toggle-dropdown"
-            >
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
               <a href="@link" class="text-primary-900">@title</a>
-              <svg
-                width="48"
-                class="transition-all duration-300 dropdown-icon"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 20.5L24 27.5L17 20.5"
-                  stroke="#181C47"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <!-- nested submenu -->
             <ul
-              class="flex pr-4 flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0"
-            >
+              class="flex pr-4 flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
               @child
             </ul>
             <!-- nested submenu end -->
@@ -800,40 +421,20 @@
         </face>
       </basis>
 
-      <basis
-        core="tree"
-        datamembername="articles-header.cat"
-        idcol="catid"
-        parentidcol="parentid"
-        nullvalue="152303"
-      >
+      <basis core="tree" datamembername="articles-header.cat" idcol="catid" parentidcol="parentid" nullvalue="152303">
         <layout>
           <div class="">
-            <div
-              class="flex items-center justify-between cursor-pointer toggle-dropdown"
-            >
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
               <a href="/مجله-گردشگری" class="text-primary-900">مجله گردشگری</a>
-              <svg
-                width="48"
-                class="transition-all duration-300 dropdown-icon"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 20.5L24 27.5L17 20.5"
-                  stroke="#02004E"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#02004E" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <!-- submenu -->
             <ul
-              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0"
-            >
+              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
               @child
             </ul>
             <!-- submenu end -->
@@ -842,9 +443,7 @@
 
         <face level="end" filter="link is null">
           <li class="py-4 px-4">
-            <a href="/article-list.bc?catid=@catid" class="text-primary-900"
-              >@title</a
-            >
+            <a href="/article-list.bc?catid=@catid" class="text-primary-900">@title</a>
           </li>
         </face>
 
@@ -856,33 +455,17 @@
 
         <face level="1" filter="link is null">
           <li class="pr-4">
-            <div
-              class="flex items-center justify-between cursor-pointer toggle-dropdown"
-            >
-              <a href="/article-list.bc?catid=@catid" class="text-primary-900"
-                >@title</a
-              >
-              <svg
-                width="48"
-                class="transition-all duration-300 dropdown-icon"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 20.5L24 27.5L17 20.5"
-                  stroke="#181C47"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+              <a href="/article-list.bc?catid=@catid" class="text-primary-900">@title</a>
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <!-- nested submenu -->
             <ul
-              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0"
-            >
+              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
               @child
             </ul>
             <!-- nested submenu end -->
@@ -891,31 +474,17 @@
 
         <face level="1">
           <li class="pr-4">
-            <div
-              class="flex items-center justify-between cursor-pointer toggle-dropdown"
-            >
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
               <a href="@link" class="text-primary-900">@title</a>
-              <svg
-                width="48"
-                class="transition-all duration-300 dropdown-icon"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 20.5L24 27.5L17 20.5"
-                  stroke="#181C47"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <!-- nested submenu -->
             <ul
-              class="pr-4flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0"
-            >
+              class="pr-4flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
               @child
             </ul>
             <!-- nested submenu end -->

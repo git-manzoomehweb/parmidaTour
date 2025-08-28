@@ -2027,6 +2027,9 @@ span {
   align-items: center;
 }
 @media (min-width: 1024px) {
+  .destinationSwiper {
+    height: 400px !important;
+  }
   .countries-container li a {
     width: 80px !important;
   }
@@ -2886,7 +2889,7 @@ td.day:hover {
   color: var(--primary-300) !important;
 }
 .mega-menu {
-  width: 739px !important;
+  width: 849px !important;
   height: 230px !important;
   border-radius: 12px !important;
   padding: 16px !important;
@@ -2894,7 +2897,7 @@ td.day:hover {
 }
 .mega-menu .container {
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   overflow-y: auto;
   padding-left: 0.3rem !important;
 }
@@ -3021,4 +3024,14 @@ a.banner-container:hover button {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+.tourDate__container a.text-white.py-6.px-10.block {
+  margin-bottom: 9px !important;
+  color: white !important;
+}
+.tourDate__container a.text-white.py-6.px-10.block:hover {
+  color: var(--secondary) !important;
+}
+.date__details .mb-10 {
+  margin-bottom: 0.5rem !important;
 }
