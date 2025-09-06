@@ -1,0 +1,229 @@
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+    <member type="list" name="list" request="taglist" preview=""></member>
+</basis>
+<basis core="dbsource" source="media" lid="1" name="db" usedforid="2359514" sourcemid="article">
+    <member type="list" name="persiaImages" format="4" order="ord"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2359514">
+    <member name="persiaText" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2358913">
+    <member name="faq" type="view" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>[##cms.seo.title|(آژانس هواپیمایی پرشیا تور)##]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[##cms.seo.description|(آژانس هواپیمایی پرشیا تور)##]">
+    <basis core="print" datamembername="tag.list">
+        <face filter="key='canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="[##cms.cms.cdn##]/images/custom_icon.png" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="manifest" href="homescreen-manifest.inc">
+    <link href="[##cms.cms.cdn##]/css/persiatourism.ui.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+    <basis core="call" file="style.inc" />
+</head>
+
+<body class="relative">
+    <!-- Header -->
+    <div class="loginRegister"></div>
+    <basis core="call" file="header.inc" />
+    <!-- Header -->
+    <!-- banner -->
+    <section class="w-full min-h-658 relative -mt-24 bg-aboutbanner bg-cover bg-no-repeat pb-5">
+        <div class="w-full h-full left-0 top-0 absolute bg-gradient-to-t from-[#04040491] to-[#0707070a] right-0"></div>
+        <div class="max-w-7xl mx-auto relative z-[1] max-xl:w-95/100 dir-rtl pt-[10%] max-lg:pt-[30%]">
+            <div
+                class="w-1/2 pt-28 max-lg:w-full max-lg:bg-white/65 max-lg:rounded-lg max-lg:p-5 max-lg:mt-0 max-lg:h-fit">
+                <h1 class="w-0 h-0 invisible opacity-0">پرشیا تور | Persia Tourism</h1>
+                <basis core="print" datamembername="db.info">
+                    <layout>
+                        <h2 class="text-right text-white max-lg:text-gray-800 leading-[34px] text-32 font-danabold ">
+                            درباره ما</h2>@child
+                    </layout>
+                    <face filter="TypeID=144 and valueID=3979304">
+                        <h3
+                            class=" text-justify text-white max-lg:text-gray-800 text-sm font-danamedium leading-5 max-xl:w-full mt-5">
+                            @largetext</h3>
+                    </face>
+                </basis>
+            </div>
+        </div>
+    </section>
+    <!-- banner -->
+    <!-- offices -->
+<basis core="dbsource" source="basiscore" name="db" mid="10" lid="1">
+  <member name="offices" type="list" propertyid="8139,8140,8141,3087364" />
+</basis>
+    <div class="divide-y divide-slate-300">
+        <basis core="print" datamembername="db.offices">
+            <layout>@child </layout>
+            <face filter="RowNumber in(1)">
+                <section class="max-w-7xl mx-auto dir-rtl max-xl:w-95/100 mt-16 flex max-lg:flex-wrap ">
+                    <div class="w-2/3 dir-rtl max-lg:w-full ">
+                        <h4 class="font-danabold text-xl mt-4 mb-8">@title</h4>
+                        <div class="text-xl font-danaregular leading-7">
+                            <ul class="text-secondary">
+                                <li><span
+                                        class="before:content-mapContactIcon before:ml-2 flex max-lg:items-start max-lg:justify-start"><span
+                                            class="block">@prp_8139 </span></span></li>
+                                <li class="inline-block "><a href="tel:@prp_8140"
+                                        class="before:content-mobileContactIcon before:ml-2 before:mt-2 flex justify-center items-center"><span
+                                            class="block">تلفن : @prp_8140 </span></a></li>
+                                <li class="inline-block"><a href="tel:"
+                                        class="before:content-phoneContactIcon before:ml-2 before:mt-2 flex justify-center items-center"><span
+                                            class="block">فکس: @prp_3087364</span></a></li>
+                                <li><a href="mailto:@prp_8141"
+                                        class="before:content-emailContactIcon before:ml-2 before:mt-2 flex items-center"><span
+                                            class="block">@prp_8141 </span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-1/3 flex justify-end max-lg:w-full"><iframe title="Address"
+                            class="rounded-md mt-9 max-lg:w-full"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.179703548052!2d51.3692960243639!3d35.7709618250398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e079599c9244b%3A0xb091051a3c1df8f5!2z2q_YsdmI2Ycg2q_Ysdiv2LTar9ix24wg2b7Ysdi024zYpw!5e0!3m2!1sfa!2s!4v1723012652198!5m2!1sfa!2s"
+                            width="351" height="143" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                </section>
+            </face>
+            <face filter="RowNumber in(2)">
+                <section class="max-w-7xl mx-auto dir-rtl max-xl:w-95/100 mt-16 flex max-lg:flex-wrap ">
+                    <div class="w-2/3 dir-rtl max-lg:w-full ">
+                        <h4 class="font-danabold text-xl mt-4 mb-8">@title</h4>
+                        <div class="text-xl font-danaregular-en leading-7">
+                            <ul class="text-secondary">
+                                <li><span
+                                        class="before:content-mapContactIcon before:ml-2 flex max-lg:items-start max-lg:justify-start"><span
+                                            class="block">@prp_8139 </span></span></li>
+                                <li class="inline-block "><a href="tel:@prp_8140"
+                                        class="before:content-mobileContactIcon before:ml-2 before:mt-2 flex justify-center items-center"><span
+                                            class="block">tel : @prp_8140 </span></a></li>
+                                <li class="inline-block"><a href="tel:"
+                                        class="before:content-phoneContactIcon before:ml-2 before:mt-2 flex justify-center items-center"><span
+                                            class="block">fax: @prp_3087364</span></a></li>
+                                <li><a href="mailto:@prp_8141"
+                                        class="before:content-emailContactIcon before:ml-2 before:mt-2 flex items-center"><span
+                                            class="block">@prp_8141 </span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-1/3 flex justify-end max-lg:w-full"><iframe title="Address"
+                            class="rounded-md mt-9 max-lg:w-full"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6480.778640779398!2d139.7768747!3d35.692036!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188eacc8986d33%3A0xba5deda9d4566e3f!2zUGVyc2lhIFRvdXJpc20gR3JvdXAgQ28uLEx0ZC4gKFBlcnNpYSBUb3VyKeODmuODq-OCt-OCouODhOODvOODquOCuuODoOOCsOODq-ODvOODlw!5e0!3m2!1sen!2s!4v1724218845509!5m2!1sen!2s"
+                            width="351" height="143" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                </section>
+            </face>
+        </basis>
+    </div>
+    <!-- offices -->
+    <!-- persons & text -->
+    <section class="max-w-7xl mx-auto text-justify mt-28 dir-rtl mb-24 max-xl:w-95/100">
+        <basis core="print" datamembername="db.persiaText">
+            <face filter="TypeID=150">
+                <h2 class="text-32 font-danabold text-right">@text </h2>
+            </face>
+            <face filter="TypeID=129">
+                <div class="text-sm font-danaregular leading-5">@largetext </div>
+            </face>
+        </basis>
+        <basis core="list" datamembername="db.persiaImages">
+            <layout>
+                <div class="mt-16">
+                    <div class="swiper swiper-persons">
+                        <div class="swiper-wrapper ">@child </div>
+                    </div>
+                </div>
+            </layout>
+            <face>
+                <div class="swiper-slide flex justify-center items-center ">
+                    <figure class="rounded-2xl overflow-hidden bg-gray-300 w-311 h-437 relative group/personcard"><img
+                            class="w-full h-full object-cover" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" width="311"
+                            height="329">
+                        <figcaption
+                            class="hidden group-hover/personcard:block absolute bottom-0 left-0 right-0 mx-auto text-center p-4 bg-primary">
+                            @name </figcaption>
+                    </figure>
+                </div>
+            </face>
+        </basis>
+    </section>
+    <!-- persons & text -->
+    <div class="clear-both"></div>
+    <!-- persia FAQ -->
+    <section class="max-w-7xl mx-auto dir-rtl mb-48 max-xl:w-95/100">
+        <h3 class="font-danademibold text-3xl max-xl:text-xl">سوالات متداول </h3>
+        <basis core="print" datamembername="db.faq">
+            <layout>
+                <ul class="faq-container w-full">@child </ul>
+            </layout>
+            <face filter="RowNumber<>1">
+                <li onclick="toggleFaq(this)" class="bg-primary-50 w-full p-4 cursor-pointer rounded-xl my-4">
+                    <div class="flex justify-between">
+                        <h2 class="font-danademibold text-base ">@text </h2><svg class="rotate-90" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.5694 8.51192C19.839 8.82641 19.8026 9.29989 19.4881 9.56946L12.4881 15.5695C12.2072 15.8102 11.7928 15.8102 11.5119 15.5695L4.51189 9.56946C4.1974 9.29989 4.16098 8.82641 4.43054 8.51192C4.70011 8.19743 5.17359 8.161 5.48808 8.43057L12 14.0122L18.5119 8.43057C18.8264 8.161 19.2999 8.19743 19.5694 8.51192Z"
+                                fill="#171535" />
+                        </svg>
+                    </div>
+                    <div class="hidden text-13 font-danaregular answer-box mt-3 text-neutral-400 w-full">@largetext
+                    </div>
+                </li>
+            </face>
+        </basis>
+    </section>
+    <!-- persia FAQ -->
+    <div class="clear-both"></div>
+    <!-- footer -->
+    <basis core="call" file="footer.inc" />
+    <!-- footer -->
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".swiper-persons",
+            {
+                slidesPerView: 4,
+                speed: 300,
+                centeredSlides: false,
+                spaceBetween: 10,
+                grabCursor: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    750: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 2.5,
+                    },
+                    1280: {
+                        slidesPerView: 4,
+                        spaceBetween: 10,
+                    },
+                },
+            });
+
+    </script>
+</body>
+
+</html>

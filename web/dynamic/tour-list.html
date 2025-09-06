@@ -26,7 +26,9 @@
 <basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.aid##]">
   <member name="aid-text" type="view" />
 </basis>
-
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.bid##]">
+  <member name="bid-text" type="view" />
+</basis>
 <basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2379515">
   <member typeid="159" propertyid="7249" name="about-us-article" type="view" />
   <member name="data" type="view" request="rdfa" />
@@ -64,7 +66,7 @@
 <body class="overflow-x-hidden tour-list">
   <basis core="call" file="header.inc" />
   <main>
-    <section class="w-full relative h-[273px] flex justify-center items-center flex-col gap-5">
+    <a href="/article.bc?id=[##cms.query.bid##]" class="w-full relative h-[273px] flex justify-center items-center flex-col gap-5">
       <basis core="print" datamembername="db.bannerimage">
         <face filter="image is null">
           <img fetchpriority="high" src="[##cms.cms.cdn##]/images/tour-list.webp" alt="@title" width="1585" height="273"
@@ -76,46 +78,24 @@
         </face>
       </basis>
       <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
-      <ul class="flex z-10 text-xs items-center gap-[2px] !text-white">
-        <li>
-          <a href="/" class="text-xs hover:!text-primary-100">صفحه اصلی</a>
-        </li>
-        <li>/</li>
-        <basis core="print" datamembername="db.navigation">
-          <face filter="RowNumber=max(RowNumber) and parentcatid<>152285">
-            <li class="text-xs" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <span itemprop="name">@title</span>
-              <meta itemprop="position" content="@rownumber" />
-            </li>
-          </face>
-          <face filter="link is null and parentcatid<>152285">
-            <li class="hover:!text-primary-100 text-xs" itemprop="itemListElement" itemscope
-              itemtype="https://schema.org/ListItem">
-              <a class="hover:!text-primary-100 text-xs" itemprop="item" href="/tour-list.bc?catid=@parentcatid"
-                aria-label="@title"><span itemprop="name">@title</span>
-                <meta itemprop="position" content="@rownumber" />
-              </a>
-              <span class="text-white text-xs"> / </span>
-            </li>
-          </face>
-          <face filter="parentcatid<>152285">
-            <li class="hover:!text-primary-100 text-xs" itemprop="itemListElement" itemscope
-              itemtype="https://schema.org/ListItem">
-              <a class="hover:!text-primary-100 text-xs" itemprop="item" href="@link" aria-label="@title"><span
-                  class="hover:!text-primary-100 text-xs" itemprop="name">@title</span>
-                <meta itemprop="position" content="@rownumber" />
-              </a>
-              <span class=""> / </span>
-            </li>
+
+      <div class="flex flex-col gap-5 px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-center items-center">
+        <basis core="print" datamembername="db.bid-text">
+          <face filter="TypeID=150">
+            <h1 class="text-white z-10 text-4xl font-bold">@text</h1>
           </face>
         </basis>
-      </ul>
-      <basis core="print" datamembername="db.scalar">
-        <face>
-          <h1 class="text-white z-10 text-4xl font-bold">@column1</h1>
-        </face>
-      </basis>
-    </section>
+        <basis core="print" datamembername="db.bid-text">
+          <face filter="TypeID=129">
+            <div class="text-white z-10  text-sm text-center line-clamp-3">
+              @largetext
+            </div>
+          </face>
+
+        </basis>
+      </div>
+
+    </a>
     <section class="w-full flex justify-center items-center h-[78px] mb-4 shadow-st">
       <div class="flex px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-between items-center">
         <ul class="flex btn-container items-center gap-2">
@@ -290,27 +270,7 @@
                 <div class="mb-8">@largetext</div>
               </face>
             </basis>
-            <!-- <div class="flex items-center gap-2">
-              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
-              <p class="text-base">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده
-              </p>
-            </div> -->
-            <!-- <div class="flex items-center gap-2">
-              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
-              <p class="text-base">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده
-              </p>
-            </div> -->
-            <!-- <div class="flex items-center gap-2">
-              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
-              <p class="text-base">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده
-              </p>
-            </div> -->
+
             <div class="w-full flex justify-between mt-7 items-center">
               <basis core="print" datamembername="db.about-us-article">
                 <face filter="TypeID=250">
