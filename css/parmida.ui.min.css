@@ -1414,7 +1414,7 @@ li.have-before::before {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.gap-119px{
+.gap-119px {
   gap: 119px;
 }
 .py-3 {
@@ -2193,6 +2193,12 @@ body.tour .flight-bg {
   top: 20%;
 }
 
-a:hover span.bg-\[\#0000007D\].z-\[2\]  {
+a:hover span.bg-\[\#0000007D\].z-\[2\] {
   background-color: #01003097 !important;
+}
+.bid-text * {
+  color: white !important;
+}
+.bid-text img {
+  display: none !important;
 }

@@ -37,6 +37,10 @@
 <basis core="dbsource" source="media" lid="2" name="db" usedforid="2379515" sourcemid="article">
   <member type="list" name="gallery" format="4" order="ord"></member>
 </basis>
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.bid##]" sourcemid="article">
+  <member type="list" name="Banner-gallery" format="4" order="ord"
+    postsql="SELECT * FROM [db.Banner-gallery] where Table1ID=[##cms.query.bid|(0)##]"></member>
+</basis>
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
 
@@ -66,20 +70,23 @@
 <body class="overflow-x-hidden tour-list">
   <basis core="call" file="header.inc" />
   <main>
-    <a href="/article.bc?id=[##cms.query.bid##]" class="w-full relative h-[273px] flex justify-center items-center flex-col gap-5">
-      <basis core="print" datamembername="db.bannerimage">
-        <face filter="image is null">
-          <img fetchpriority="high" src="[##cms.cms.cdn##]/images/tour-list.webp" alt="@title" width="1585" height="273"
+    <a href="/article.bc?id=[##cms.query.bid##]"
+      class="w-full relative h-[273px] flex justify-center items-center flex-col gap-5">
+      <basis core="print" datamembername="db.Banner-gallery">
+        <else-layout>
+          <img fetchpriority="high" src="[##cms.cms.cdn##]/images/tour-list.jpg" alt="tour-list" width="1585"
+            height="273" class="w-full z-0 h-full object-cover absolute top-0 left-0" />
+        </else-layout>
+        <layout>@child</layout>
+        <face filter="RowNumber=1">
+          <img fetchpriority="high" src="@largeIMG" alt="@name" width="1585" height="273"
             class="w-full z-0 h-full object-cover absolute top-0 left-0" />
         </face>
-        <face>
-          <img fetchpriority="high" width="2808" height="273" src="@image" alt="@title"
-            class="w-full z-0 h-full object-cover absolute top-0 left-0" />
-        </face>
+
       </basis>
       <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
 
-      <div class="flex flex-col gap-5 px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-center items-center">
+      <div class="flex  bid-text  flex-col gap-5 px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-center items-center">
         <basis core="print" datamembername="db.bid-text">
           <face filter="TypeID=150">
             <h1 class="text-white z-10 text-4xl font-bold">@text</h1>
