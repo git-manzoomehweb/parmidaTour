@@ -15,10 +15,17 @@
 
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
   <member name="tour-list" type="list" link="tour.bc"
-    propertyid="3087941,3087943,3087944,3087942, 3087425,3087945, 3087422 , 3087423 , 3087424 ,3087428,8181,10000504,8076"
+    propertyid="3087941,3087943,3087944,3087942, 3087425,3087945, 3087422 , 3087423 , 3087424 ,3087428,8181,10000504,8076,8077"
     perpage="16" pageno="[##cms.query.pagenum|(1)##]" typeid="159" size="295x349"
     order="[##cms.Host.tour-list-order|(ord)##]" />
   <member name="paging" type="list" request="paging" count="5" parentname="tour-list" />
+</basis>
+<basis core="dbsource" source="basiscore" mid="20" name="list" lid="1" schemaid="987" term="[##cms.query.term##]">
+  <member name="airline" type="list" request="spelist" />
+</basis>
+<basis core="inlinesource" name="joining">
+  <member name="list" lefttblcol="db.tour-list.prp_10000504" righttblcol="list.airline.name" format="join"
+    jointype="leftjoin" />
 </basis>
 
 
@@ -86,7 +93,8 @@
       </basis>
       <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
 
-      <div class="flex  bid-text  flex-col gap-5 px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-center items-center">
+      <div
+        class="flex  bid-text  flex-col gap-5 px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-center items-center">
         <basis core="print" datamembername="db.bid-text">
           <face filter="TypeID=150">
             <h1 class="text-white z-10 text-4xl font-bold">@text</h1>
@@ -137,7 +145,7 @@
           موردی یافت نشد
         </div>
 
-        <basis core="print" datamembername="db.tour-list">
+        <basis core="print" datamembername="joining.list">
           <else-layout>
             <div class="text-center text-primary-900 font-bold py-4">
               موردی یافت نشد
@@ -148,38 +156,42 @@
           </layout>
           <face>
             <div class="rounded-xl p-[1px] linear4 overflow-hidden !h-[465px]">
-              <div class="hidden popular-tour">@prp_3087943</div>
-              <div class="hidden soon">@prp_3087942</div>
-              <div class="hidden discount">@prp_3087944</div>
+              <div class="hidden popular-tour">@db.tour-list.prp_3087943</div>
+              <div class="hidden soon">@db.tour-list.prp_3087942</div>
+              <div class="hidden discount">@db.tour-list.prp_3087944</div>
 
-              <a href="@link" class="w-full px-2 py-3 rounded-xl linear3 group h-full relative gap-2 flex flex-col">
+              <a href="@db.tour-list.link"
+                class="w-full px-2 py-3 rounded-xl linear3 group h-full relative gap-2 flex flex-col">
                 <div class="w-full absolute flex flex-col items-end gap-2 right-0 pt-3 px-4">
                   <div
                     class="h-[44px] shadow-cs group-hover:bg-primary-900 transition-all duration-500 ease-in-out w-full flex justify-between p-3 items-center rounded-lg bg-white">
                     <span class="text-xs text-zinc-500 group-hover:text-white">قیمت از:</span>
                     <span class="text-sm group-hover:text-white">
-                      @prp_8181</span>
+                      @db.tour-list.prp_8181</span>
                   </div>
                   <span
-                    class="min-w-[77px] property transition-all duration-500 ease-in-out group-hover:bg-primary-900 h-[34px] flex justify-center items-center rounded-lg text-white bg-primary-200">@prp_3087945</span>
+                    class="min-w-[77px] property transition-all duration-500 ease-in-out group-hover:bg-primary-900 h-[34px] flex justify-center items-center rounded-lg text-white bg-primary-200">@db.tour-list.prp_3087945</span>
                 </div>
-                <img loading="lazy" src="@00295X00349prp" alt="@title" width="295" height="349"
-                  class="w-full object-cover h-[349px] rounded-xl border border-white" />
-                <p class="font-bold line-clamp-1">@title</p>
+                <img loading="lazy" src="@db.tour-list.00295X00349prp" alt="@db.tour-list.title" width="295"
+                  height="349" class="w-full object-cover h-[349px] rounded-xl border border-white" />
+                <div class="flex items-center justify-between gap-6">
+                  <p class="font-bold line-clamp-1">@db.tour-list.title</p>
+                  <img src="@list.airline.pic" alt="@list.airline.name" width="90" height="36" loading="lazy">
+                </div>
                 <div class="flex w-full justify-between items-center">
                   <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
                       <img loading="lazy" src="[##cms.cms.cdn##]/images/date-1.png" alt="calendar-icon" class="size-5"
                         width="30" height="30" />
                       <p class="text-primary-900 text-xs whitespace-nowrap">
-                        @date
+                        @db.tour-list.prp_8077
                       </p>
                     </div>
                     <div class="flex items-center gap-2">
                       <img loading="lazy" src="[##cms.cms.cdn##]/images/Circle-Clock.png" alt="Clock-icon"
                         class="size-5" width="30" height="30" />
                       <p class="text-primary-900 w-[79px] text-xs line-clamp-1">
-                        @prp_8076
+                        @db.tour-list.prp_8076
                       </p>
                     </div>
                   </div>

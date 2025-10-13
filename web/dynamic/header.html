@@ -4,6 +4,9 @@
 <basis core="dbsource" source="basiscore" lid="1" mid="1" name="articles-header">
   <member name="cat" type="tree" request="cat" parentid="152303" order="ord"></member>
 </basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="other-services-header">
+  <member name="cat" type="tree" request="cat" parentid="218003" order="ord"></member>
+</basis>
 
 <basis core="dbsource" source="basiscore" name="db" mid="5" lid="1" usedforid="[##cms.cms.ownerid##]">
   <member name="info" type="view"></member>
@@ -198,7 +201,107 @@
 
 
 
+        <div
+        class="relative group h-4-5r hidden lg:!flex gap-3 cursor-pointer items-center group transition-all duration-300 text-base font-normal">
+        <a href="/Other-travel-services"
+          class="text-primary-900 max-lg:!hidden flex items-center gap-3 duration-500 pb-2 relative transition-all ease-in-out overflow-hidden">
+          <span
+            class="absolute right-[600px] w-full h-[1px] top-[90%] bg-gradient-to-l from-primary-900 group-hover:right-0 transition-all duration-500 ease-in-out"></span>
+          <span class="z-[1]">سایر خدمات سفر</span>
+          <span class="group-hover:rotate-180 transition-all">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M18.7518 7.4392L11.7518 14.4392L4.75183 7.4392L3.69113 8.4999L11.7518 16.5605L19.8125 8.4999L18.7518 7.4392Z"
+                fill="#03004E"></path>
+            </svg>
+          </span>
+        </a>
 
+        <div
+          class="lg:absolute mega-menu relative shadow-lg justify-between rounded hidden cstm-drp bg-white h-fit group-hover:flex gap-3 top-full">
+          <basis core="tree" datamembername="other-services-header.cat" idcol="catid" parentidcol="parentid"
+            nullvalue="218003">
+            <layout>
+              <div class="w-full flex gap-4 container bg-white">@child</div>
+            </layout>
+            <face level="end" filter="link is null">
+              <a class="hover:text-primary-900 px-2 title" href="/article-list.bc?catid=@catid">@title</a>
+            </face>
+            <face level="end">
+              <a class="hover:text-primary-900 px-2 title" href="/@link">@title</a>
+            </face>
+            <face level="1" filter="link is null">
+              <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                <a class="hover:text-primary-900 px-2 title" href="/article-list.bc?catid=@catid">@title
+                </a>
+                <span class="">
+                  <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                      fill="#03004E" class="group-hover:fill-primary-600"></path>
+                  </svg>
+                </span>
+                <ul
+                  class="hidden shadow-md w-44 cstm-drp bg-white -left-44 top-0 bg-white rounded gap-4 h-fit group-hover/level2:flex flex-col absolute">
+                  <div class="flex flex-col gap-2">@child</div>
+                </ul>
+              </div>
+            </face>
+            <face level="1">
+              <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                <a class="hover:text-primary-900 px-2" href="/article-list.bc?catid=@catid">@title
+                </a>
+                <span class="">
+                  <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                      fill="#03004E" class="group-hover:fill-primary-600"></path>
+                  </svg>
+                </span>
+                <ul
+                  class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
+                  <div class="flex flex-col gap-2">@child</div>
+                </ul>
+              </div>
+            </face>
+            <face level="2" filter="link is null">
+              <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                <a class="hover:text-primary-900 px-2" href="/article-list.bc?catid=@catid">@title </a><span class="">
+                  <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                      fill="#03004E" class="group-hover:fill-primary-600"></path>
+                  </svg>
+                </span>
+                <ul
+                  class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
+                  <div class="flex flex-col gap-2">@child</div>
+                </ul>
+              </div>
+            </face>
+            <face level="2">
+              <div class="group/level2 set-an-sp relative justify-between flex items-center">
+                <a class="hover:text-primary-900 px-2" href="/article-list.bc?catid=@catid">@title </a><span class="">
+                  <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                      fill="#03004E" class="group-hover:fill-primary-600"></path>
+                  </svg>
+                </span>
+                <ul
+                  class="lg:absolute relative shadow-lg justify-between rounded hidden gap-4 w-full lg:w-44 cstm-drp bg-white h-fit group-hover:flex flex-col top-6">
+                  <div class="flex flex-col gap-2">@child</div>
+                </ul>
+              </div>
+            </face>
+          </basis>
+          <basis core="print" datamembername="other-services-header.cat">
+            <face filter="catid in(218003)">
+              <img class="rounded-xl" height="191" width="198" src="@image" alt="@title" loading="lazy" />
+            </face>
+          </basis>
+        </div>
+      </div>
 
 
 
@@ -414,6 +517,77 @@
             <!-- nested submenu -->
             <ul
               class="flex pr-4 flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
+              @child
+            </ul>
+            <!-- nested submenu end -->
+          </li>
+        </face>
+      </basis>
+
+      <basis core="tree" datamembername="other-services-header.cat" idcol="catid" parentidcol="parentid" nullvalue="218003">
+        <layout>
+          <div class="">
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+              <a href="/Other-travel-services" class="text-primary-900">سایر خدمات سفر</a>
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#02004E" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <!-- submenu -->
+            <ul
+              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
+              @child
+            </ul>
+            <!-- submenu end -->
+          </div>
+        </layout>
+
+        <face level="end" filter="link is null">
+          <li class="py-4 px-4">
+            <a href="/article-list.bc?catid=@catid" class="text-primary-900">@title</a>
+          </li>
+        </face>
+
+        <face level="end">
+          <li class="py-4 px-4">
+            <a href="@link" class="text-primary-900">@title</a>
+          </li>
+        </face>
+
+        <face level="1" filter="link is null">
+          <li class="pr-4">
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+              <a href="/article-list.bc?catid=@catid" class="text-primary-900">@title</a>
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <!-- nested submenu -->
+            <ul
+              class="pr-4 flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
+              @child
+            </ul>
+            <!-- nested submenu end -->
+          </li>
+        </face>
+
+        <face level="1">
+          <li class="pr-4">
+            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+              <a href="@link" class="text-primary-900">@title</a>
+              <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <!-- nested submenu -->
+            <ul
+              class="pr-4flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
               @child
             </ul>
             <!-- nested submenu end -->
