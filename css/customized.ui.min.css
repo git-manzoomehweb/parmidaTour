@@ -3035,3 +3035,22 @@ a.banner-container:hover button {
 .date__details .mb-10 {
   margin-bottom: 0.5rem !important;
 }
+header .form-search-content{
+  border: 1px solid var(--primary-800);
+  border-radius: 50px;
+  padding: 3px !important;
+  
+}
+header .form-search-content input{
+  border: none !important;
+  outline: none;
+  height: 32px !important;
+  padding: 0 4px !important;
+}
+header .form-search-content svg{
+  width: 18px !important;
+  height: 18px !important;
+}
+header .form-search-content button:hover{
+  background-color: var(--primary-500) !important;
+}

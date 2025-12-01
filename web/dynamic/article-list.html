@@ -1,577 +1,341 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="1"
-  lid="1"
-  usedforid="2379515"
->
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2379515">
   <member typeid="159" propertyid="7249" name="about-us-article" type="view" />
   <member name="data" type="view" request="rdfa" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="media"
-  lid="2"
-  name="db"
-  usedforid="2379515"
-  sourcemid="article"
->
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="2379515" sourcemid="article">
   <member type="list" name="gallery" format="4" order="ord"></member>
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="1"
-  name="db"
-  catid="[##cms.query.catid##]"
->
-  <member
-    name="bannerimage"
-    type="tree"
-    request="cat"
-    parentid=""
-    postsql="select * from [db.bannerimage] where catid = [##cms.query.catid##]"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+  <member name="bannerimage" type="tree" request="cat" parentid=""
+    postsql="select * from [db.bannerimage] where catid = [##cms.query.catid##]" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="18"
-  name="db"
-  usedforid="[##cms.query.catid##]"
->
+<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
   <member name="scalar" type="scalar" typeid="150" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="1"
-  name="db"
-  catid="[##cms.query.catid##]"
->
-  <member
-    name="navigation"
-    type="tree"
-    request="navcatid"
-    parentid="[##cms.query.catid##]"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+  <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="basiscore"
-  lid="1"
-  mid="1"
-  name="db"
-  catid="[##cms.query.catid##]"
->
-  <member
-    name="article-list"
-    type="list"
-    link="article.bc"
-    propertyid="7244,7248,7249,3087661"
-    perpage="16"
-    pageno="[##cms.query.pagenum|(1)##]"
-    typeid="159"
-    size="411x205"
-    order="[##cms.Host.article-list-order|(ord)##]"
-  />
-  <member
-    name="paging"
-    type="list"
-    request="paging"
-    count="5"
-    parentname="article-list"
-  />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+  <member name="article-list" type="list" link="article.bc" propertyid="7244,7248,7249,3087661" perpage="16"
+    pageno="[##cms.query.pagenum|(1)##]" typeid="159" size="411x205" order="[##cms.Host.article-list-order|(ord)##]" />
+  <member name="paging" type="list" request="paging" count="5" parentname="article-list" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="PopularTours">
-  <member
-    name="cat"
-    type="tree"
-    request="cat"
-    parentid="215371"
-    order="ord"
-  ></member>
+  <member name="cat" type="tree" request="cat" parentid="215371" order="ord"></member>
 </basis>
 
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
-    />
-    <title>
-      [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری پارمیدا سیر پارس)##]
-    </title>
-    <meta
-      name="description"
-      content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  پارمیدا سیر پارس)##]"
-    />
-    <basis
-      core="dbsource"
-      source="hosting"
-      name="tag"
-      urlid="[##cms.seo.urlid##]"
-    >
-      <member type="list" name="list" request="taglist" preview=""></member>
-    </basis>
-    <basis core="print" datamembername="tag.list">
-      <face filter="key = 'canonical'">
-        <link rel="canonical" href="@value" />
-      </face>
-      <face>
-        <meta property="@key" content="@value" />
-      </face>
-    </basis>
-    <basis core="call" file="pwa.inc" />
-    <basis core="call" file="style.inc" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
-    />
-  </head>
-  <body class="overflow-x-hidden tour-list">
-    <basis core="call" file="header.inc" />
-    <main>
-      <section
-        class="w-full relative h-[221px] flex justify-center items-center flex-col gap-5"
-      >
-        <basis core="print" datamembername="db.bannerimage">
-          <face filter="image is null">
-            <div
-              class="bg-articles-list w-full z-0 h-full object-cover absolute top-0 left-0"
-            ></div>
-          </face>
 
-          <face>
-            <img
-              loading="lazy"
-              src="@image"
-              alt="@title"
-              class="w-full z-0 h-full object-cover absolute top-0 left-0"
-            />
-          </face>
-        </basis>
-        <span
-          class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"
-        ></span>
-      </section>
-      <section
-        class="w-full flex justify-center items-center h-[78px] mb-4 shadow-st"
-      >
-        <div
-          class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex items-center justify-between gap-6"
-        >
-          <div class="flex flex-col gap-1">
-            <ul
-              class="flex z-10 text-xs items-center gap-[2px] text-primary-900"
-            >
-              <li>
-                <a href="/" class="text-xs hover:!text-primary-100"
-                  >صفحه اصلی</a
-                >
-              </li>
-              <li>/</li>
-              <basis core="print" datamembername="db.navigation">
-                <face filter="RowNumber=max(RowNumber) and parentcatid<>152286">
-                  <li
-                    class="text-xs"
-                    itemprop="itemListElement"
-                    itemscope
-                    itemtype="https://schema.org/ListItem"
-                  >
-                    <span itemprop="name">@title</span
-                    ><meta itemprop="position" content="@rownumber" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+  <title>
+    [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری پارمیدا سیر پارس)##]
+  </title>
+  <meta name="description" content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  پارمیدا سیر پارس)##]" />
+  <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+    <member type="list" name="list" request="taglist" preview=""></member>
+  </basis>
+  <basis core="print" datamembername="tag.list">
+    <face filter="key = 'canonical'">
+      <link rel="canonical" href="@value" />
+    </face>
+    <face>
+      <meta property="@key" content="@value" />
+    </face>
+  </basis>
+  <basis core="call" file="pwa.inc" />
+  <basis core="call" file="style.inc" />
+  <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+</head>
+
+<body class="overflow-x-hidden tour-list">
+  <basis core="call" file="header.inc" />
+  <main>
+    <section class="w-full relative h-[221px] flex justify-center items-center flex-col gap-5">
+      <basis core="print" datamembername="db.bannerimage">
+        <face filter="image is null">
+          <div class="bg-articles-list w-full z-0 h-full object-cover absolute top-0 left-0"></div>
+        </face>
+
+        <face>
+          <img loading="lazy" src="@image" alt="@title" class="w-full z-0 h-full object-cover absolute top-0 left-0" />
+        </face>
+      </basis>
+      <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
+    </section>
+    <section class="w-full flex justify-center items-center h-[78px] mb-4 shadow-st">
+      <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex items-center justify-between gap-6">
+        <div class="flex flex-col gap-1">
+          <ul class="flex z-10 text-xs items-center gap-[2px] text-primary-900">
+            <li>
+              <a href="/" class="text-xs hover:!text-primary-100">صفحه اصلی</a>
+            </li>
+            <li>/</li>
+            <basis core="print" datamembername="db.navigation">
+              <face filter="RowNumber=max(RowNumber) and parentcatid<>152286">
+                <li class="text-xs" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <span itemprop="name">@title</span>
+                  <meta itemprop="position" content="@rownumber" />
+                </li>
+              </face>
+              <face filter="link is null and parentcatid<>152286">
+                <li class="hover:!text-primary-200 text-primary-900 text-xs" itemprop="itemListElement" itemscope
+                  itemtype="https://schema.org/ListItem">
+                  <a class="hover:!text-primary-200 text-primary-900 text-xs" itemprop="item"
+                    href="/tour-list.bc?catid=@parentcatid" aria-label="@title"><span itemprop="name">@title</span>
+                    <meta itemprop="position" content="@rownumber" />
+                  </a>
+                  <span class="text-zinc-700 text-sm"> / </span>
+                </li>
+              </face>
+              <face filter="parentcatid<>152286">
+                <li class="hover:!text-primary-200 text-primary-900 text-xs" itemprop="itemListElement" itemscope
+                  itemtype="https://schema.org/ListItem">
+                  <a class="hover:!text-primary-200 text-primary-900 text-xs" itemprop="item" href="@link"
+                    aria-label="@title"><span class="hover:!text-primary-200 text-primary-900 text-xs"
+                      itemprop="name">@title</span>
+                    <meta itemprop="position" content="@rownumber" />
+                  </a>
+                  <span class=""> / </span>
+                </li>
+              </face>
+            </basis>
+          </ul>
+          <basis core="print" datamembername="db.scalar">
+            <face>
+              <h1 class="font-medium text-2xl text-primary-900">@column1</h1>
+            </face>
+          </basis>
+        </div>
+        <form id="search-content-article" action=""
+          class="seraching-form search-content flex relative items-center gap-3 w-[calc(25%+142px)]">
+          <input
+            class="w-[calc(100%-142px)] h-[55px] truncate line-clamp-1 focus:shadow-md transition-all ease-in-out duration-300 px-2 rounded-xl bg-[#EBEDFF] text-zinc-500 placeholder:text-zinc-500 border-none outline-none focus:outline-none"
+            required id="search-content-name" autocomplete="off" placeholder="جستجوی مقاله" type="text" />
+          <button
+            class="w-[142px] h-[55px] rounded-[50px] hover:bg-primary-500 bg-[#02004E] transition-all ease-in-out duration-300 flex justify-center items-center text-white"
+            type="submit">
+            جستجو
+          </button>
+          <input type="hidden" value="1" name="lid" />
+          <input id="catidsearched" type="hidden" value="0" name="id" />
+          <ul class="flex-col top-full absolute overflow-hidden hidden w-full search-drop-down bg-white rounded-lg">
+            <div class="w-full flex flex-col overflow-auto h-178px">
+              <basis core="list" datamembername="db.article-list">
+                <face filter="link is null">
+                  <li onclick="contentSearched('@title','@id')">
+                    @title
+                    <span class="hidden linkspan">/article.bc?lid=1&id=@id</span>
                   </li>
                 </face>
-                <face filter="link is null and parentcatid<>152286">
-                  <li
-                    class="hover:!text-primary-200 text-primary-900 text-xs"
-                    itemprop="itemListElement"
-                    itemscope
-                    itemtype="https://schema.org/ListItem"
-                  >
-                    <a
-                      class="hover:!text-primary-200 text-primary-900 text-xs"
-                      itemprop="item"
-                      href="/tour-list.bc?catid=@parentcatid"
-                      aria-label="@title"
-                      ><span itemprop="name">@title</span
-                      ><meta itemprop="position" content="@rownumber"
-                    /></a>
-                    <span class="text-zinc-700 text-sm"> / </span>
-                  </li>
-                </face>
-                <face filter="parentcatid<>152286">
-                  <li
-                    class="hover:!text-primary-200 text-primary-900 text-xs"
-                    itemprop="itemListElement"
-                    itemscope
-                    itemtype="https://schema.org/ListItem"
-                  >
-                    <a
-                      class="hover:!text-primary-200 text-primary-900 text-xs"
-                      itemprop="item"
-                      href="@link"
-                      aria-label="@title"
-                      ><span
-                        class="hover:!text-primary-200 text-primary-900 text-xs"
-                        itemprop="name"
-                        >@title</span
-                      ><meta itemprop="position" content="@rownumber"
-                    /></a>
-                    <span class=""> / </span>
+                <face>
+                  <li onclick="contentSearched('@title','@id')">
+                    @title
+                    <span class="hidden linkspan">/@link</span>
                   </li>
                 </face>
               </basis>
-            </ul>
-            <basis core="print" datamembername="db.scalar">
-              <face>
-                <h1 class="font-medium text-2xl text-primary-900">@column1</h1>
-              </face>
-            </basis>
-          </div>
-          <form
-            id="search-content-article"
-            action=""
-            class="seraching-form search-content flex relative items-center gap-3 w-[calc(25%+142px)]"
-          >
-            <input
-              class="w-[calc(100%-142px)] h-[55px] truncate line-clamp-1 focus:shadow-md transition-all ease-in-out duration-300 px-2 rounded-xl bg-[#EBEDFF] text-zinc-500 placeholder:text-zinc-500 border-none outline-none focus:outline-none"
-              required
-              id="search-content-name"
-              autocomplete="off"
-              placeholder="جستجوی مقاله"
-              type="text"
-            />
-            <button
-              class="w-[142px] h-[55px] rounded-[50px] hover:bg-primary-500 bg-[#02004E] transition-all ease-in-out duration-300 flex justify-center items-center text-white"
-              type="submit"
-            >
-              جستجو
-            </button>
-            <input type="hidden" value="1" name="lid" />
-            <input id="catidsearched" type="hidden" value="0" name="id" />
-            <ul
-              class="flex-col top-full absolute overflow-hidden hidden w-full search-drop-down bg-white rounded-lg"
-            >
-              <div class="w-full flex flex-col overflow-auto h-178px">
-                <basis core="list" datamembername="db.article-list">
-                  <face filter="link is null">
-                    <li onclick="contentSearched('@title','@id')">
-                      @title
-                      <span class="hidden linkspan"
-                        >/article.bc?lid=1&id=@id</span
-                      >
-                    </li>
-                  </face>
-                  <face>
-                    <li onclick="contentSearched('@title','@id')">
-                      @title
-                      <span class="hidden linkspan">/@link</span>
-                    </li>
-                  </face>
-                </basis>
-              </div>
-            </ul>
-          </form>
-        </div>
-      </section>
+            </div>
+          </ul>
+        </form>
+      </div>
+    </section>
 
-      <section class="w-full flex justify-center items-center my-7">
-        <div
-          class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col items-center justify-between gap-6"
-        >
-          <basis core="print" datamembername="db.article-list">
-            <else-layout>
-              <div class="text-center text-primary-900 font-bold py-4">
-                موردی یافت نشد
+    <section class="w-full flex justify-center items-center my-7">
+      <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col items-center justify-between gap-6">
+        <basis core="print" datamembername="db.article-list">
+          <else-layout>
+            <div class="text-center text-primary-900 font-bold py-4">
+              موردی یافت نشد
+            </div>
+          </else-layout>
+          <layout>
+            <div class="w-full grid grid-cols-3 gap-[42px] article-list-container">
+              @child
+            </div>
+          </layout>
+          <face>
+            <a href="@link" class="w-full !h-[367px] group relative flex flex-col gap-4">
+              <div class="w-full linear6 p-[2px] rounded-xl">
+                <img loading="lazy" width="395" height="205" src="@00411X00205prp" alt="@title"
+                  class="w-full h-[205px] object-cover rounded-xl" />
               </div>
-            </else-layout>
-            <layout>
               <div
-                class="w-full grid grid-cols-3 gap-[42px] article-list-container"
-              >
-                @child
+                class="bg-[#EBEDFF] flex flex-col group-hover:bg-[#60b7ff77] gap-2 h-[146px] justify-between rounded-xl p-3">
+                <p class="font-bold line-clamp-1">@title</p>
+                <div class="text-sm text-zinc-900 line-clamp-3">
+                  @prp_7244
+                </div>
+                <div class="w-full flex justify-between items-center">
+                  <div class="group-hover:text-primary-900 text-primary-300 text-sm">
+                    بیشتر بخوانیم
+                  </div>
+                  <div class="flex text-xs items-center gap-2 text-zinc-500">
+                    @date
+                    <img loading="lazy" src="[##cms.cms.cdn##]/images/date-2.svg" alt="calendar-icon" width="21"
+                      height="21" />
+                  </div>
+                </div>
               </div>
-            </layout>
-            <face>
-              <a
-                href="@link"
-                class="w-full !h-[367px] group relative flex flex-col gap-4"
-              >
-                <div class="w-full linear6 p-[2px] rounded-xl">
-                  <img
-                    loading="lazy"
-                    width="395"
-                    height="205"
-                    src="@00411X00205prp"
-                    alt="@title"
-                    class="w-full h-[205px] object-cover rounded-xl"
-                  />
-                </div>
-                <div
-                  class="bg-[#EBEDFF] flex flex-col group-hover:bg-[#60b7ff77] gap-2 h-[146px] justify-between rounded-xl p-3"
-                >
-                  <p class="font-bold line-clamp-1">@title</p>
-                  <div class="text-sm text-zinc-900 line-clamp-3">
-                    @prp_7244
-                  </div>
-                  <div class="w-full flex justify-between items-center">
-                    <div
-                      class="group-hover:text-primary-900 text-primary-300 text-sm"
-                    >
-                      بیشتر بخوانیم
-                    </div>
-                    <div class="flex text-xs items-center gap-2 text-zinc-500">
-                      @date
-                      <img
-                        loading="lazy"
-                        src="[##cms.cms.cdn##]/images/date-2.svg"
-                        alt="calendar-icon"
-                        width="21"
-                        height="21"
-                      />
-                    </div>
-                  </div>
-                </div>
+            </a>
+          </face>
+        </basis>
+
+        <div class="w-full flex gap-4 justify-center items-center">
+          <basis core="print" datamembername="db.paging">
+            <face filter="(@sta='pre')">
+              <a class="w-12 h-12 rounded-full flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
+                href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]" aria-label="angle-left">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.25 12.7743L19.25 12.7743" stroke="#03004E" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" class="group-hover:stroke-white"></path>
+                  <path d="M10.3008 18.7987L4.25078 12.7747L10.3008 6.74969" stroke="#03004E" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white"></path>
+                </svg>
               </a>
             </face>
           </basis>
 
-          <div class="w-full flex gap-4 justify-center items-center">
-            <basis core="print" datamembername="db.paging">
-              <face filter="(@sta='pre')">
-                <a
-                  class="w-12 h-12 rounded-full flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
-                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-                  aria-label="angle-left"
-                >
-                  <svg
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4.25 12.7743L19.25 12.7743"
-                      stroke="#03004E"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="group-hover:stroke-white"
-                    ></path>
-                    <path
-                      d="M10.3008 18.7987L4.25078 12.7747L10.3008 6.74969"
-                      stroke="#03004E"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="group-hover:stroke-white"
-                    ></path>
-                  </svg>
-                </a>
+          <basis core="print" datamembername="db.paging">
+            <face filter="(@page=[##cms.query.pagenum|(1)##])">
+              <a class="w-12 h-12 text-primary-900 rounded-full hover:text-white flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
+                href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]">
+                @page
+              </a>
+            </face>
+            <face filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')">
+              <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                class="w-12 h-12 text-primary-900 rounded-full hover:text-white flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group">
+                @page
+              </a>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.paging">
+            <face filter="(@sta='nex')">
+              <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]" aria-label="angle-right"
+                class="w-12 h-12 rounded-full rotate-180 flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.25 12.7743L19.25 12.7743" stroke="#03004E" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" class="group-hover:stroke-white"></path>
+                  <path d="M10.3008 18.7987L4.25078 12.7747L10.3008 6.74969" stroke="#03004E" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white"></path>
+                </svg>
+              </a>
+            </face>
+          </basis>
+        </div>
+
+        <div class="w-full flex flex-col gap-6">
+          <div class="flex w-full justify-between items-center">
+            <basis core="tree" datamembername="PopularTours.cat" idcol="catid" parentidcol="parentid"
+              nullvalue="215371">
+              <layout>
+                <ul class="flex items-center gap-2">
+                  @child
+                </ul>
+              </layout>
+              <face filter="catid<>215371">
+                <li data-id="@catid"
+                  class="flex tour-li hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 min-w-[105px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]">
+                  @title
+                </li>
               </face>
             </basis>
-
-            <basis core="print" datamembername="db.paging">
-              <face filter="(@page=[##cms.query.pagenum|(1)##])">
-                <a
-                  class="w-12 h-12 text-primary-900 rounded-full hover:text-white flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
-                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-                >
-                  @page
-                </a>
-              </face>
-              <face
-                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')"
-              >
-                <a
-                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-                  class="w-12 h-12 text-primary-900 rounded-full hover:text-white flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
-                >
-                  @page
-                </a>
-              </face>
-            </basis>
-
-            <basis core="print" datamembername="db.paging">
-              <face filter="(@sta='nex')">
-                <a
-                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
-                  aria-label="angle-right"
-                  class="w-12 h-12 rounded-full rotate-180 flex justify-center items-center bg-[#EBEDFF] hover:bg-[#24366D] group"
-                >
-                  <svg
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4.25 12.7743L19.25 12.7743"
-                      stroke="#03004E"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="group-hover:stroke-white"
-                    ></path>
-                    <path
-                      d="M10.3008 18.7987L4.25078 12.7747L10.3008 6.74969"
-                      stroke="#03004E"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="group-hover:stroke-white"
-                    ></path>
-                  </svg>
-                </a>
-              </face>
-            </basis>
-          </div>
-
-          <div class="w-full flex flex-col gap-6">
-            <div class="flex w-full justify-between items-center">
-              <basis
-                core="tree"
-                datamembername="PopularTours.cat"
-                idcol="catid"
-                parentidcol="parentid"
-                nullvalue="215371"
-              >
-                <layout>
-                  <ul class="flex items-center gap-2">
-                    @child
-                  </ul>
-                </layout>
-                <face filter="catid<>215371">
-                  <li
-                    data-id="@catid"
-                    class="flex tour-li hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 min-w-[105px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]"
-                  >
-                    @title
-                  </li>
-                </face>
-              </basis>
-              <div class="flex flex-col gap-2 items-end">
-                <h3 class="font-medium text-2xl text-zinc-900">
-                  تورهای پرطرفدار
-                </h3>
-                <p class="text-4xl text-zinc-400 text-left">
-                  Popular destinations
-                </p>
-              </div>
-            </div>
-            <div
-              id="tour-list-container"
-              class="w-full tourSwiper swiper swiper-4 h-[520px]"
-            >
-              <div class="swiper-wrapper fetch-content-tour"></div>
-              <div class="swiper-pagination"></div>
+            <div class="flex flex-col gap-2 items-end">
+              <h3 class="font-medium text-2xl text-zinc-900">
+                تورهای پرطرفدار
+              </h3>
+              <p class="text-4xl text-zinc-400 text-left">
+                Popular destinations
+              </p>
             </div>
           </div>
+          <div id="tour-list-container" class="w-full tourSwiper swiper swiper-4 h-[520px]">
+            <div class="swiper-wrapper fetch-content-tour"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
 
-          <a
-            href=""
-            class="w-full hover:shadow-2xl mt-6 rounded-3xl overflow-hidden"
-          >
-            <img
-              loading="lazy"
-              src="[##cms.cms.cdn##]/images/parmida-banner.jpg"
-              alt="banner"
-              class="w-full h-[267px] object-cover"
-            />
-          </a>
+        <a href="" class="w-full hover:shadow-2xl mt-6 rounded-3xl overflow-hidden">
+          <img loading="lazy" src="[##cms.cms.cdn##]/images/parmida-banner.jpg" alt="banner"
+            class="w-full h-[267px] object-cover" />
+        </a>
 
-          <div class="w-full flex gap-[59px] mb-16">
-            <div class="w-fit flex gap-[27px] items-end">
-              <basis core="print" datamembername="db.gallery">
-                <face filter="RowNumber=1">
-                  <div class="w-full h-[486px]">
-                    <img
-                      loading="lazy"
-                      src="@largeIMG"
-                      alt="@name"
-                      class="w-full h-full rounded-[20px] object-cover"
-                    />
-                  </div>
-                </face>
-               
-              </basis>
-            </div>
-            <div class="w-[60%] flex flex-col gap-4 pt-[68px]">
-              <div class="flex items-center gap-2">
-                <img
-                  loading="lazy"
-                  src="[##cms.cms.cdn##]/images/logo.png"
-                  alt="logo"
-                  width="83"
-                  height="72"
-                  class="w-[55px] h-12"
-                />
-                <basis core="print" datamembername="db.about-us-article">
-                  <face filter="TypeID=150">
-                    <h5 class="text-xl font-bold">@text</h5>
-                  </face>
-                </basis>
-              </div>
+        <div class="w-full flex gap-[59px] mb-16">
+          <div class="w-fit flex gap-[27px] items-end">
+            <basis core="print" datamembername="db.gallery">
+              <face filter="RowNumber=1">
+                <div class="w-full h-[486px]">
+                  <img loading="lazy" src="@largeIMG" alt="@name" class="w-full h-full rounded-[20px] object-cover" />
+                </div>
+              </face>
+
+            </basis>
+          </div>
+          <div class="w-[60%] flex flex-col gap-4 pt-[68px]">
+            <div class="flex items-center gap-2">
+              <img loading="lazy" src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="83" height="72"
+                class="w-[55px] h-12" />
               <basis core="print" datamembername="db.about-us-article">
-                <face filter="TypeID=129">
-                  <div class="mb-8">@largetext</div>
+                <face filter="TypeID=150">
+                  <h5 class="text-xl font-bold">@text</h5>
                 </face>
               </basis>
-              <!-- <div class="flex items-center gap-2">
+            </div>
+            <basis core="print" datamembername="db.about-us-article">
+              <face filter="TypeID=129">
+                <div class="mb-8">@largetext</div>
+              </face>
+            </basis>
+            <!-- <div class="flex items-center gap-2">
               <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
               <p class="text-base">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
                 استفاده
               </p>
             </div> -->
-              <!-- <div class="flex items-center gap-2">
+            <!-- <div class="flex items-center gap-2">
               <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
               <p class="text-base">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
                 استفاده
               </p>
             </div> -->
-              <!-- <div class="flex items-center gap-2">
+            <!-- <div class="flex items-center gap-2">
               <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
               <p class="text-base">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
                 استفاده
               </p>
             </div> -->
-              <div class="w-full flex justify-between mt-7 items-center">
-                <basis core="print" datamembername="db.about-us-article">
-                  <face filter="TypeID=250">
-                    <article class="flex flex-col gap-3">
-                      <div class="text-primary-300   flex items-center justify-center no-change font-bold text-4xl">
-                        @largetext
-                      </div>
-                      <div class="text-sm text-primary-300">@text</div>
-                    </article>
-                  </face>
-                </basis>
-              </div>
+            <div class="w-full flex justify-between mt-7 items-center">
+              <basis core="print" datamembername="db.about-us-article">
+                <face filter="TypeID=250">
+                  <article class="flex flex-col gap-3">
+                    <div class="text-primary-300   flex items-center justify-center no-change font-bold text-4xl">
+                      @largetext
+                    </div>
+                    <div class="text-sm text-primary-300">@text</div>
+                  </article>
+                </face>
+              </basis>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
-    <basis core="call" file="footer.inc" />
-  </body>
+      </div>
+    </section>
+  </main>
+  <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+  <basis core="call" file="footer.inc" />
+</body>
+
 </html>
