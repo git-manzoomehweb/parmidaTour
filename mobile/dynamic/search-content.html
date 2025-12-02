@@ -54,16 +54,15 @@
     <basis core="call" file="header.inc" />
     <main>
 
-        <section class="w-full relative h-[273px] flex justify-center items-center flex-col gap-5">
+        <section class="w-full relative h-[178px] flex justify-center items-center flex-col gap-5">
             <img fetchpriority="high" src="[##cms.cms.cdn##]/images/tour-list.jpg" alt="tour-list" width="1585"
                 height="273" class="w-full z-0 h-full object-cover absolute top-0 left-0" />
 
             <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
 
-            <div
-                class="flex  bid-text  flex-col gap-5 px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-center items-center">
+            <div class="flex  bid-text  flex-col gap-5 px-5 w-full   justify-center items-center">
 
-                <h1 class="text-white z-10 text-4xl font-bold">[##cms.query.search-content-name##]</h1>
+                <h1 class="text-white z-10 text-base font-bold">[##cms.query.search-content-name##]</h1>
 
 
             </div>
@@ -72,7 +71,7 @@
 
 
         <section class="w-full flex justify-center py-5">
-            <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
+            <div class="px-5 w-full   flex flex-col gap-6">
 
                 <div class="w-full flex font-bold text-xl justify-center ">تورها</div>
                 <basis core="print" datamembername="joining.list">
@@ -82,7 +81,7 @@
                         </div>
                     </else-layout>
                     <layout>
-                        <div class="w-full grid grid-cols-4 gap-3">@child</div>
+                        <div class="w-full grid grid-cols-1 gap-3">@child</div>
                     </layout>
                     <face>
                         <div class="rounded-xl p-[1px] linear4 overflow-hidden !h-[465px]">
@@ -150,7 +149,7 @@
                         </div>
                     </else-layout>
                     <layout>
-                        <div class="w-full grid grid-cols-3 gap-[42px] article-list-container">
+                        <div class="w-full grid grid-cols-1 gap-3">
                             @child
                         </div>
                     </layout>

@@ -433,7 +433,7 @@
           </svg>
         </button>
         <div class="flex gap-3 items-center">
-          <form action="/search-content.bc" method="get" class="hidden items-center form-search-content max-lg:!hidden">
+          <form action="/search-content.bc" method="get" class="flex items-center form-search-content max-lg:!hidden">
             <input type="text" class="serach-content-input" autocomplete="off" name="search-content-name"
               placeholder="جستجو">
             <button type="submit" class="bg-primary-900 rounded-full p-2">
@@ -465,6 +465,17 @@
         <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="83" height="72" class="w-[55px] h-12" />
       </a>
     </div>
+
+    <form action="/search-content.bc" method="get" class="flex w-full justify-between items-center form-search-content">
+      <input type="text" class="serach-content-input" autocomplete="off" name="search-content-name" placeholder="جستجو">
+      <button type="submit" class="bg-primary-900 rounded-full p-2">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M14.6738 2.5C21.3863 2.5 26.8463 7.96 26.8463 14.6725C26.8463 17.8394 25.6309 20.7278 23.6421 22.8956L27.5555 26.8009C27.9218 27.1671 27.923 27.7596 27.5568 28.1259C27.3743 28.3109 27.133 28.4021 26.893 28.4021C26.6543 28.4021 26.4143 28.3109 26.2305 28.1284L22.2698 24.1788C20.1863 25.8473 17.5446 26.8462 14.6738 26.8462C7.96125 26.8462 2.5 21.385 2.5 14.6725C2.5 7.96 7.96125 2.5 14.6738 2.5ZM14.6738 4.375C8.995 4.375 4.375 8.99375 4.375 14.6725C4.375 20.3512 8.995 24.9712 14.6738 24.9712C20.3513 24.9712 24.9713 20.3512 24.9713 14.6725C24.9713 8.99375 20.3513 4.375 14.6738 4.375Z"
+            fill="white" />
+        </svg>
+      </button>
+    </form>
     <div class="flex flex-col gap-3 py-6">
       <a href="/" class="text-primary-900">صفحه اصلی</a>
 
