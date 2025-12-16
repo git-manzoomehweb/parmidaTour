@@ -13,14 +13,16 @@
   <member typeid="159" propertyid="7249" name="about-us-article" type="view" />
   <member name="data" type="view" request="rdfa" />
 </basis>
+
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="2379515" sourcemid="article">
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+
 <basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2380142">
   <member typeid="159" propertyid="7249,7244" name="banners-article" type="view" />
 </basis>
 <basis core="dbsource" source="media" lid="1" name="db" usedforid="2380142" sourcemid="article">
   <member type="list" name="gallery-banner" format="4" order="ord"></member>
-</basis>
-<basis core="dbsource" source="media" lid="1" name="db" usedforid="2379515" sourcemid="article">
-  <member type="list" name="gallery" format="4" order="ord"></member>
 </basis>
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
@@ -66,10 +68,10 @@
   <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
 </head>
 
-<body class="">
+<body class="overflow-x-hidden">
   <basis core="call" file="header.inc" />
-  <main>
-    <h1 class="sr-only">پارمیدا سیر پارس</h1>
+  <main class="overflow-x-hidden w-screen">
+    <h1 class="sr-only opacity-0">پارمیدا سیر پارس</h1>
     <section class="w-full flex justify-center items-center flex-col">
       <div class="flex flex-col gap-3 overflow-hidden h-[330px] w-full">
         <img fetchpriority="high" src="[##cms.cms.cdn##]/images/search-bg.jpg" alt="search-bg" width="1585"
@@ -83,29 +85,29 @@
         <img loading="lazy" src="[##cms.cms.cdn##]/images/insurance-bg.jpg" alt="search-bg"
           class="h-[330px] object-cover w-full insurance-bg hidden" />
       </div>
-
-      <div class="w-full min-h-[125px] flex-col bg-white flex justify-center items-center">
+      <div class="w-full bg-white flex flex-col justify-center items-center">
         <div
-          class="search-box-container px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col items-center justify-center">
-          <div id="search-box" class="w-full flex flex-col justify-center items-center">
+          class="search-box-container mobile-search-box px-5 w-full xl:!px-0 flex flex-col items-center justify-center">
+          <div id="search-box" class="w-full h-full flex flex-col justify-center items-center">
             <span class="loader"></span>
           </div>
         </div>
       </div>
     </section>
     <section class="w-full flex justify-center bg-[#EBEDFF] py-9">
-      <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
-        <div class="flex w-full justify-between items-center">
+      <div class="w-full overflow-hidden flex flex-col gap-6">
+        <div class="flex w-full flex-col-reverse">
           <basis core="tree" datamembername="Populardestination.cat" idcol="catid" parentidcol="parentid"
             nullvalue="215371">
             <layout>
-              <ul class="flex items-center gap-2">
+              <ul
+                class="flex items-center px-5 w-full overflow-auto [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-thumb]:hidden gap-2">
                 @child
               </ul>
             </layout>
             <face filter="catid<>215371">
               <li data-id="@catid"
-                class="flex destination-li hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 min-w-[105px] font-medium text-zinc-500 rounded-[50px] bg-white">
+                class="destinationmob-li flex text-sm hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 min-w-[105px] font-medium text-zinc-500 rounded-[50px] bg-white">
                 @title
               </li>
             </face>
@@ -113,40 +115,99 @@
 
           <basis core="print" datamembername="Populardestination.cat">
             <face filter="catid in(215371)">
-              <div class="flex flex-col gap-2">
-                <h2 class="font-medium text-2xl text-zinc-900">@title</h2>
-                <p class="text-sm text-zinc-400 text-left">
+              <div class="flex w-full px-5 mb-3 justify-between gap-2">
+                <h2 class="font-medium text-base text-zinc-900">@title</h2>
+                <p class="text-xs text-zinc-400 text-left">
                   Popular destinations
                 </p>
               </div>
             </face>
           </basis>
         </div>
-        <div id="destination-list-container" class="destinationSwiper w-full swiper">
-          <div class="swiper-wrapper fetch-content-destination"></div>
-          <div class="swiper-pagination"></div>
+        <div class="px-5 w-full overflow-hidden">
+          <div id="destinationmob-list-container" class="w-full swiper destinationmobSwiper h-[320px]">
+            <div class="swiper-wrapper fetch-content-destinationmob">
+              <!-- <div
+                  class="swiper-slide rounded-xl group overflow-hidden relative !h-[269px]"
+                >
+                  <a href="" class="w-full h-full flex flex-col">
+                    <img
+                      width="246"
+                      height="269"
+                      src="[##cms.cms.cdn##]/images/list-png.jpg"
+                      alt=""
+                      class="w-full h-full absolute top-0 left-0 object-cover z-0"
+                    />
+
+                    <div
+                      class="absolute z-[1] py-6 justify-between items-center flex flex-col w-full h-full linear-2 top-0 left-0"
+                    >
+                      <p class="text-xl font-bold text-zinc-900 text-center">
+                        دبی
+                      </p>
+                      <div
+                        class="flex relative group-hover:w-12 transition-all ease-in-out duration-500 border-2 border-primary-900 group-hover:bg-[#24366D] overflow-hidden w-[128px] text-white justify-center items-center h-12 rounded-3xl bg-primary-900"
+                      >
+                        <span
+                          class="transition-all group-hover:-translate-x-48 ease-in-out duration-500"
+                          >بزن بریم</span
+                        >
+                        <span
+                          class="translate-x-28 absolute group-hover:translate-x-0 ease-in-out duration-500 transition-all"
+                        >
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4.25 12.7743L19.25 12.7743"
+                              stroke="#fff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <path
+                              d="M10.3008 18.7987L4.25078 12.7747L10.3008 6.74969"
+                              stroke="#fff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div> -->
+            </div>
+            <div class="swiper-pagination mobile"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="w-full flex justify-center py-9">
-      <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
+    <section class="w-full flex justify-center pt-9">
+      <div class="px-5 w-full xl:!px-0 flex flex-col gap-6">
         <a href="/article.bc?lid=1&id=2380142"
-          class="w-full relative overflow-hidden banner-container hover:shadow-2xl flex flex-col gap-5 p-6   rounded-xl">
-          <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
+          class="w-full relative hover:shadow-2xl p-6 overflow-hidden rounded-xl flex flex-col gap-5"> <span
+            class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
+
           <basis core="print" datamembername="db.banners-article">
             <face filter="TypeID=150">
-              <p class="text-4xl z-10 font-bold text-white">@text</p>
+              <p class="text-base  font-bold text-white z-10">@text</p>
             </face>
           </basis>
 
-          <div class="text-sm z-10 w-65d  text-white line-clamp-3">
+          <div class="line-clamp-2 text-white z-10 text-xs ">
             <basis core="print" datamembername="db.banners-article">
               <face filter="TypeID<>150"> @largetext </face>
             </basis>
           </div>
-
-          <button type="button" class="w-bannerbtn z-10 flex font-bold text-white bg-blue3 justify-center items-center">
+          <button type="button"
+            class="flex w-[60%] z-10 h-12 rounded-full font-bold text-white bg-blue3 justify-center items-center button-bnr">
             مشاهده بیشتر
           </button>
           <basis core="print" datamembername="db.gallery-banner">
@@ -155,45 +216,41 @@
                 class="absolute w-full h-full object-cover top-0 left-0" />
             </face>
           </basis>
-
-          <!-- <img
-              loading="lazy"
-              src="[##cms.cms.cdn##]/images/parmida-banner.jpg"
-              alt="banner"
-              class="w-full h-[267px] object-cover"
-            /> -->
         </a>
       </div>
     </section>
 
     <section class="w-full flex justify-center py-9">
-      <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
-        <div class="flex w-full justify-between items-center">
+      <div class="w-full xl:!px-0 flex flex-col gap-6">
+        <div class="flex w-full overflow-hidden flex-col-reverse gap-3 items-center">
           <basis core="tree" datamembername="PopularTours.cat" idcol="catid" parentidcol="parentid" nullvalue="215371">
             <layout>
-              <ul class="flex items-center gap-2">
+              <ul
+                class="flex items-center px-5 w-full overflow-auto [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-thumb]:hidden gap-2">
                 @child
               </ul>
             </layout>
+
             <face filter="catid<>215371">
               <li data-id="@catid"
-                class="flex tour-li hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 min-w-[105px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]">
+                class="flex text-sm tourmob-li hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 min-w-[105px] font-medium text-zinc-500 rounded-[50px] bg-[#EBEDFF]">
                 @title
               </li>
             </face>
           </basis>
-          <div class="flex flex-col gap-2 items-end">
-            <h3 class="font-medium text-2xl text-zinc-900">
-              تورهای پرطرفدار
-            </h3>
-            <p class="text-4xl text-zinc-400 text-left">
+
+          <div class="flex w-full px-5 justify-between gap-2 items-center">
+            <h3 class="font-medium text- text-zinc-900">تورهای پرطرفدار</h3>
+            <p class="text-xs text-zinc-400 text-left">
               Popular destinations
             </p>
           </div>
         </div>
-        <div id="tour-list-container" class="w-full tourSwiper swiper swiper-4 h-[520px]">
-          <div class="swiper-wrapper fetch-content-tour"></div>
-          <div class="swiper-pagination"></div>
+        <div class="w-full px-5 overflow-hidden">
+          <div id="tourmob-list-container" class="w-full tourmobSwiper relative h-[400px]">
+            <div class="swiper-wrapper fetch-content-tourmob"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -201,41 +258,43 @@
     <basis core="print" datamembername="db.Tourism-Magazine">
       <layout>
         <section class="w-full flex justify-center linear5 py-9">
-          <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
+          <div class="w-full xl:!px-0 flex flex-col gap-6">
             <div class="flex w-full justify-end items-center">
-              <div class="flex flex-col gap-2 items-end">
-                <h4 class="font-medium text-2xl text-zinc-900">
+              <div class="px-5 flex w-full justify-between gap-2 items-center">
+                <h4 class="font-medium text-base text-zinc-900">
                   مجله گردشگری
                 </h4>
-                <p class="text-4xl text-zinc-400 text-left">
+                <p class="text-xs text-zinc-400 text-left">
                   Tourism magazine
                 </p>
               </div>
             </div>
-            <div class="w-full swiper swiper-3 home !h-[440px]">
-              <div class="swiper-wrapper">@child</div>
-              <div class="swiper-pagination"></div>
+            <div class="w-full px-5 overflow-hidden">
+              <div class="w-full swiper swiper-mobile3 home !h-[457px]">
+                <div class="swiper-wrapper">@child</div>
+                <div class="swiper-pagination"></div>
+              </div>
             </div>
           </div>
         </section>
       </layout>
       <face filter="link is null">
-        <div class="swiper-slide !h-[367px]">
+        <div class="swiper-slide !h-[407px]">
           <a href="/article.bc?lid=1&id=@id" class="w-full h-full group flex flex-col gap-4">
             <div class="w-full linear6 p-[2px] rounded-xl">
-              <img loading="lazy" src="@00411X00205prp" alt="@title" class="w-full h-[205px] object-cover rounded-xl" />
+              <img src="@00411X00205prp" alt="@title" class="w-full h-[205px] object-cover rounded-xl" />
             </div>
             <div
-              class="bg-[#EBEDFF] flex flex-col group-hover:bg-[#60b7ff77] gap-2 h-[146px] justify-between rounded-xl p-3">
+              class="bg-[#EBEDFF] flex flex-col group-hover:bg-[#60b7ff77] gap-2 h-[186px] justify-between rounded-xl p-3">
               <p class="font-bold line-clamp-1">@title</p>
-              <p class="text-sm text-zinc-900 line-clamp-3">@prp_7244</p>
+              <p class="text-sm text-zinc-900 line-clamp-5">@prp_7244</p>
               <div class="w-full flex justify-between items-center">
                 <div class="group-hover:text-primary-900 text-primary-300 text-sm">
                   بیشتر بخوانیم
                 </div>
                 <div class="flex text-xs items-center gap-2 text-zinc-500">
                   @date
-                  <img loading="lazy" src="[##cms.cms.cdn##]/images/date-2.svg" alt="calendar-icon" />
+                  <img src="[##cms.cms.cdn##]/images/date-2.svg" alt="calendar-icon" width="21" height="21" />
                 </div>
               </div>
             </div>
@@ -243,22 +302,22 @@
         </div>
       </face>
       <face>
-        <div class="swiper-slide !h-[367px]">
+        <div class="swiper-slide !h-[407px]">
           <a href="@link" class="w-full h-full group flex flex-col gap-4">
             <div class="w-full linear6 p-[2px] rounded-xl">
-              <img loading="lazy" src="@00411X00205prp" alt="@title" class="w-full h-[205px] object-cover rounded-xl" />
+              <img src="@00411X00205prp" alt="@title" class="w-full h-[205px] object-cover rounded-xl" />
             </div>
             <div
-              class="bg-[#EBEDFF] flex flex-col group-hover:bg-[#60b7ff77] gap-2 h-[146px] justify-between rounded-xl p-3">
+              class="bg-[#EBEDFF] flex flex-col group-hover:bg-[#60b7ff77] gap-2 h-[186px] justify-between rounded-xl p-3">
               <p class="font-bold line-clamp-1">@title</p>
-              <p class="text-sm text-zinc-900 line-clamp-3">@prp_7244</p>
+              <p class="text-sm text-zinc-900 line-clamp-5">@prp_7244</p>
               <div class="w-full flex justify-between items-center">
                 <div class="group-hover:text-primary-900 text-primary-300 text-sm">
                   بیشتر بخوانیم
                 </div>
                 <div class="flex text-xs items-center gap-2 text-zinc-500">
                   @date
-                  <img loading="lazy" src="[##cms.cms.cdn##]/images/date-2.svg" alt="calendar-icon" />
+                  <img src="[##cms.cms.cdn##]/images/date-2.svg" alt="calendar-icon" width="21" height="21" />
                 </div>
               </div>
             </div>
@@ -267,61 +326,41 @@
       </face>
     </basis>
 
-    <section class="w-full flex justify-center py-9">
-      <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex gap-[59px]">
-        <div class="w-fit flex gap-[27px] items-end">
+    <section class="w-full flex justify-center pb-9">
+      <div class="px-5 w-full xl:!px-0 flex gap-6 flex-col-reverse">
+        <div class="w-full flex gap-[27px] justify-center items-end">
           <basis core="print" datamembername="db.gallery">
             <face filter="RowNumber=1">
-              <div class="w-full h-[486px]">
-                <img loading="lazy" src="@largeIMG" alt="@name" class="w-full h-full rounded-[20px] object-cover" />
-              </div>
+              <img src="@largeIMG" alt="@name" class="w-full h-[260px] rounded-[20px] object-cover" />
             </face>
           </basis>
         </div>
-        <div class="w-[60%] flex flex-col gap-4 pt-[68px]">
+        <div class="w-full flex flex-col gap-4">
           <div class="flex items-center gap-2">
-            <img loading="lazy" src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="83" height="72"
-              class="w-[55px] h-12" />
+            <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="83" height="72" class="w-[55px] h-12" />
             <basis core="print" datamembername="db.about-us-article">
               <face filter="TypeID=150">
-                <h5 class="text-xl font-bold">@text</h5>
+                <h5 class="text-base font-bold">@text</h5>
               </face>
             </basis>
           </div>
           <basis core="print" datamembername="db.about-us-article">
             <face filter="TypeID=129">
-              <div class="mb-8">@largetext</div>
+              <div class="mb-8 text-xs">@largetext</div>
             </face>
           </basis>
-          <!-- <div class="flex items-center gap-2">
-              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
-              <p class="text-base">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده
-              </p>
-            </div> -->
-          <!-- <div class="flex items-center gap-2">
-              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
-              <p class="text-base">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده
-              </p>
-            </div> -->
-          <!-- <div class="flex items-center gap-2">
-              <span class="w-[10px] h-[10px] bg-zinc-900 rounded-full"></span>
-              <p class="text-base">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده
-              </p>
-            </div> -->
+
           <div class="w-full flex justify-between mt-7 items-center">
             <basis core="print" datamembername="db.about-us-article">
               <face filter="TypeID=250">
-                <article class="flex flex-col gap-3">
-                  <div class="text-primary-300 no-change flex justify-center items-center font-bold text-4xl">
+                <article class="flex justify-center items-center flex-col gap-3">
+                  <div class="text-primary-300 no-change flex justify-center items-center font-bold text-base">
                     @largetext
                   </div>
-                  <div class="text-sm text-primary-300">@text</div>
+
+                  <div class="text-xs text-center text-primary-300">
+                    @text
+                  </div>
                 </article>
               </face>
             </basis>

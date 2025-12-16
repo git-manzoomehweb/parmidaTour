@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // _______________________
 document.addEventListener("DOMContentLoaded", function () {
-  const SpeacialTel = document.querySelector(".special-tel");
+  const SpeacialTel = document.querySelectorAll(".special-tel");
   const footer = document.querySelector("footer");
 
   function checkScroll() {
@@ -265,11 +265,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const windowHeight = window.innerHeight;
 
     if (footerTop <= windowHeight) {
-      SpeacialTel.style.opacity = "0";
-      SpeacialTel.style.zIndex = "0";
+      SpeacialTel.forEach((SpeacialTel) => {
+        SpeacialTel.style.opacity = "0";
+        SpeacialTel.style.zIndex = "0";
+      });
     } else {
-      SpeacialTel.style.zIndex = "20";
-      SpeacialTel.style.opacity = "1";
+      SpeacialTel.forEach((SpeacialTel) => {
+        SpeacialTel.style.opacity = "20";
+        SpeacialTel.style.zIndex = "10";
+      });
     }
   }
 
