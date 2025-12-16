@@ -2027,6 +2027,9 @@ span {
   align-items: center;
 }
 @media (min-width: 1024px) {
+  header .mega-menu {
+    position: absolute !important;
+  }
   .payment__container {
     width: 1280px !important;
   }
