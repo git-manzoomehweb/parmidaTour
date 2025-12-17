@@ -2900,8 +2900,12 @@ td.day:hover {
 .text-primary-300.no-change * {
   color: var(--primary-300) !important;
 }
+.tour-mega-menu {
+  width: 1280px !important;
+  right: -180px !important;
+}
 .mega-menu {
-  width: 929px !important;
+  width: 929px;
   height: 230px !important;
   border-radius: 12px !important;
   padding: 16px !important;
@@ -2974,6 +2978,20 @@ td.day:hover {
 }
 .h-4-5r {
   height: 4.5rem;
+}
+.mega-menu .set-an-sp ul.cstm-drp div.set-an-sp ul.cstm-drp {
+  padding-right: 12px !important;
+  max-height: 0 !important;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  opacity: 0 !important;
+}
+.mega-menu .set-an-sp ul.cstm-drp div.set-an-sp:hover ul.cstm-drp {
+  max-height: fit-content !important;
+  opacity: 1 !important;
+}
+.mega-menu .set-an-sp ul.cstm-drp div ul.cstm-drp a.title::before {
+  height: 1px !important;
 }
 .mega-menu .title {
   font-size: 1rem;

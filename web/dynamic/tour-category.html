@@ -1,0 +1,211 @@
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="bannerimage" type="tree" request="cat" parentid=""
+        postsql="select * from [db.bannerimage] where catid = [##cms.query.catid##]" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="tour">
+    <member name="cat-tours" type="tree" request="cat" parentid="[##cms.query.catid##]" order="ord" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.aid##]">
+    <member name="aid-text" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.bid##]">
+    <member name="bid-text" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2379515">
+    <member typeid="159" propertyid="7249" name="about-us-article" type="view" />
+    <member name="data" type="view" request="rdfa" />
+</basis>
+
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="2379515" sourcemid="article">
+    <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.bid##]" sourcemid="article">
+    <member type="list" name="Banner-gallery" format="4" order="ord"
+        postsql="SELECT * FROM [db.Banner-gallery] where Table1ID=[##cms.query.bid|(0)##]"></member>
+</basis>
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+    <title>
+        [##cms.seo.title|(شرکت خدمات مسافرت هوایی و گردشگری پارمیدا سیر پارس)##]
+    </title>
+    <meta name="description"
+        content="[##cms.seo.description|(شرکت خدمات مسافرت هوایی و گردشگری  پارمیدا سیر پارس)##]" />
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <basis core="call" file="pwa.inc" />
+    <basis core="call" file="style.inc" />
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+</head>
+
+<body class="overflow-x-hidden tour-list">
+    <basis core="call" file="header.inc" />
+    <main>
+        <div class="w-full relative h-[273px] flex justify-center items-center flex-col gap-5">
+            <basis core="print" datamembername="db.Banner-gallery">
+                <else-layout>
+                    <img fetchpriority="high" src="[##cms.cms.cdn##]/images/tour-list.jpg" alt="tour-list" width="1585"
+                        height="273" class="w-full z-0 h-full object-cover absolute top-0 left-0" />
+                </else-layout>
+                <layout>@child</layout>
+                <face filter="RowNumber=1">
+                    <img fetchpriority="high" src="@largeIMG" alt="@name" width="1585" height="273"
+                        class="w-full z-0 h-full object-cover absolute top-0 left-0" />
+                </face>
+
+            </basis>
+            <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
+
+            <div
+                class="flex  bid-text  flex-col gap-5 px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 justify-center items-center">
+                <basis core="print" datamembername="db.scalar">
+                    <face>
+                        <h1 class="text-white z-10 text-4xl font-bold">@column1</h1>
+                    </face>
+                </basis>
+
+            </div>
+
+        </div>
+
+        <section class="w-full flex justify-center py-5">
+            <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
+                <basis core="print" datamembername="tour.cat-tours">
+
+                    <else-layout>
+                        <div class="text-center text-primary-900 font-bold py-4">
+                            موردی یافت نشد
+                        </div>
+                    </else-layout>
+                    <layout>
+                        <div class="w-full grid grid-cols-4 gap-3">@child</div>
+                    </layout>
+                    <face filter="link is null and catid<>[##cms.query.catid##]">
+                        <div class="rounded-xl p-[1px] linear4 overflow-hidden">
+                            <a href="/tour-list.bc?catid=@catid"
+                                class="w-full px-2 py-3 rounded-xl linear3 group h-full relative gap-2 flex flex-col">
+
+                                <img loading="lazy" src="[##cms.cms.cdn##]/@image" alt="@title" width="295" height="224"
+                                    class="w-full object-cover h-[224px] rounded-xl border border-white" />
+                                <div class="flex items-center justify-between gap-6">
+                                    <p class="font-bold line-clamp-1">@title</p>
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="48" height="48" rx="24" fill="#0C92FF"
+                                            class="group-hover:fill-primary-900 transition-all duration-500 ease-in-out" />
+                                        <path
+                                            d="M18.6464 23.6464C18.4512 23.8417 18.4512 24.1583 18.6464 24.3536L21.8284 27.5355C22.0237 27.7308 22.3403 27.7308 22.5355 27.5355C22.7308 27.3403 22.7308 27.0237 22.5355 26.8284L19.7071 24L22.5355 21.1716C22.7308 20.9763 22.7308 20.6597 22.5355 20.4645C22.3403 20.2692 22.0237 20.2692 21.8284 20.4645L18.6464 23.6464ZM29 24V23.5H19V24V24.5H29V24Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+
+                            </a>
+                        </div>
+                    </face>
+                    <face filter="catid<>[##cms.query.catid##]">
+                        <div class="rounded-xl p-[1px] linear4 overflow-hidden">
+                            <a href="/@link"
+                                class="w-full px-2 py-3 rounded-xl linear3 group h-full relative gap-2 flex flex-col">
+
+                                <img loading="lazy" src="[##cms.cms.cdn##]/@image" alt="@title" width="295" height="224"
+                                    class="w-full object-cover h-[224px] rounded-xl border border-white" />
+                                <div class="flex items-center justify-between gap-6">
+                                    <p class="font-bold line-clamp-1">@title</p>
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="48" height="48" rx="24" fill="#0C92FF"
+                                            class="group-hover:fill-primary-900 transition-all duration-500 ease-in-out" />
+                                        <path
+                                            d="M18.6464 23.6464C18.4512 23.8417 18.4512 24.1583 18.6464 24.3536L21.8284 27.5355C22.0237 27.7308 22.3403 27.7308 22.5355 27.5355C22.7308 27.3403 22.7308 27.0237 22.5355 26.8284L19.7071 24L22.5355 21.1716C22.7308 20.9763 22.7308 20.6597 22.5355 20.4645C22.3403 20.2692 22.0237 20.2692 21.8284 20.4645L18.6464 23.6464ZM29 24V23.5H19V24V24.5H29V24Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+
+                            </a>
+                        </div>
+                    </face>
+                </basis>
+
+
+
+                <basis core="print" datamembername="db.aid-text">
+                    <layout>
+                        <div class="flex flex-col aid-text gap-2">@child</div>
+                    </layout>
+                    <face filter="TypeID<>128 and TypeID<>159">
+                        <p class="text-2xl text-zinc-900">@text</p>
+                        <div class="text-base text-zinc-900">@largetext</div>
+                    </face>
+                </basis>
+
+                <div class="w-full mt-5 mb-8 flex gap-[59px]">
+                    <div class="w-fit flex gap-[27px] items-end">
+                        <basis core="print" datamembername="db.gallery">
+                            <face filter="RowNumber=1">
+                                <div class="w-full h-[486px]">
+                                    <img loading="lazy" src="/@largeIMG" alt="@name"
+                                        class="w-full h-full rounded-[20px] object-cover" />
+                                </div>
+                            </face>
+
+                        </basis>
+                    </div>
+                    <div class="w-[60%] flex flex-col gap-4 pt-[68px]">
+                        <div class="flex items-center gap-2">
+                            <img loading="lazy" src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="83"
+                                height="72" class="w-[55px] h-12" />
+                            <basis core="print" datamembername="db.about-us-article">
+                                <face filter="TypeID=150">
+                                    <p class="text-xl font-bold">@text</p>
+                                </face>
+                            </basis>
+                        </div>
+                        <basis core="print" datamembername="db.about-us-article">
+                            <face filter="TypeID=129">
+                                <div class="mb-8">@largetext</div>
+                            </face>
+                        </basis>
+
+                        <div class="w-full flex justify-between mt-7 items-center">
+                            <basis core="print" datamembername="db.about-us-article">
+                                <face filter="TypeID=250">
+                                    <article class="flex flex-col gap-3">
+                                        <div
+                                            class="text-primary-300  flex items-center justify-center no-change font-bold text-4xl">
+                                            @largetext
+                                        </div>
+                                        <div class="text-sm text-primary-300">@text</div>
+                                    </article>
+                                </face>
+                            </basis>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" />
+</body>
+
+</html>
