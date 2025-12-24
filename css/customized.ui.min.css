@@ -2985,6 +2985,7 @@ td.day:hover {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   opacity: 0 !important;
+  display: none !important;
 }
 .mega-menu .set-an-sp ul.cstm-drp div.set-an-sp:hover ul.cstm-drp {
   max-height: fit-content !important;
