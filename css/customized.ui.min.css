@@ -2033,9 +2033,7 @@ span {
   .payment__container {
     width: 1280px !important;
   }
-  .payment__container #captchaContainer {
-    padding-right: 10px !important;
-  }
+  
   #custom-payment-form {
     padding: 16px 22px !important;
   }
