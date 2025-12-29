@@ -975,6 +975,9 @@ ul {
   --secondary-500: #0074dc;
    --secondary-600:#0057bb;
     --secondary-700:#003d9a;
+      --secondary-800:#003d9a;
+        --secondary-900:#003d9a;
+          --secondary-950:#00265e;
 }
 .special-tel {
   animation: 2s linear infinite scaler;
