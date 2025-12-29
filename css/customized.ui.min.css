@@ -966,6 +966,15 @@ ul {
   --zinc-200: #e4e4e7;
   --zinc-100: #f4f4f5;
   --zinc-50: #fafafa;
+
+--secondary-50: #60b7ff;
+  --secondary-100: #0c92ff;
+  --secondary-200: #2365e0;
+  --secondary-300: #2c40c3;
+  --secondary-400: #0c92ff;
+  --secondary-500: #0074dc;
+   --secondary-600:#0057bb;
+    --secondary-700:#003d9a;
 }
 .special-tel {
   animation: 2s linear infinite scaler;
