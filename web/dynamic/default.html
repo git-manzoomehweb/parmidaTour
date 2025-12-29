@@ -1,5 +1,5 @@
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="Populardestination">
-  <member name="cat" type="tree" request="cat" parentid="215371" order="ord"></member>
+  <member name="cat" type="tree" request="cat" parentid="219585" order="ord"></member>
 </basis>
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="PopularTours">
   <member name="cat" type="tree" request="cat" parentid="215371" order="ord"></member>
@@ -97,13 +97,13 @@
       <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
         <div class="flex w-full justify-between items-center">
           <basis core="tree" datamembername="Populardestination.cat" idcol="catid" parentidcol="parentid"
-            nullvalue="215371">
+            nullvalue="219585">
             <layout>
               <ul class="flex items-center gap-2">
                 @child
               </ul>
             </layout>
-            <face filter="catid<>215371">
+            <face filter="catid<>219585">
               <li data-id="@catid"
                 class="flex destination-li hover:text-white transition-all ease-in-out duration-200 hover:bg-primary-900 cursor-pointer justify-center items-center h-12 min-w-[105px] font-medium text-zinc-500 rounded-[50px] bg-white">
                 @title
@@ -112,9 +112,9 @@
           </basis>
 
           <basis core="print" datamembername="Populardestination.cat">
-            <face filter="catid in(215371)">
+            <face filter="catid in(219585)">
               <div class="flex flex-col gap-2">
-                <h2 class="font-medium text-2xl text-zinc-900">@title</h2>
+                <h2 class="font-medium text-2xl text-zinc-900">مقاصد پرطرفدار</h2>
                 <p class="text-sm text-zinc-400 text-left">
                   Popular destinations
                 </p>
@@ -184,10 +184,10 @@
           </basis>
           <div class="flex flex-col gap-2 items-end">
             <h3 class="font-medium text-2xl text-zinc-900">
-              تورهای پرطرفدار
+              تورهای فصل
             </h3>
             <p class="text-4xl text-zinc-400 text-left">
-              Popular destinations
+              Seasonal Tours
             </p>
           </div>
         </div>
