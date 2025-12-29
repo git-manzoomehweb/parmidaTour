@@ -3110,3 +3110,11 @@ header .form-search-content button {
 .right-5 {
   right: 20px;
 }
+.book-rtl  input[type="radio"]{
+  appearance: auto !important;
+  accent-color: var(--primary) !important;
+}
+.book-company__rule__container input[type="checkbox"]{
+  appearance: auto !important;
+  accent-color: var(--primary) !important;
+}
