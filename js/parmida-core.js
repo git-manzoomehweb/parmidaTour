@@ -502,7 +502,7 @@ document.addEventListener("DOMContentLoaded", function () {
     t[0].style.color = "#fff";
   }
   if (e) {
-    async function n(t = 215372) {
+    async function n(t = 219585) {
       e.innerHTML =
         '<div class="w-full flex p-6 justify-center items-center"><span class="loader"></span></div>';
       try {
@@ -563,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
     t[0].style.color = "#fff";
   }
   if (e) {
-    async function n(t = 215372) {
+    async function n(t = 219585) {
       e.innerHTML =
         '<div class="w-full flex justify-center p-6"><span class="loader"></span></div>';
       try {

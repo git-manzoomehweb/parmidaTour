@@ -13,7 +13,7 @@
   <member typeid="159" propertyid="7249" name="about-us-article" type="view" />
   <member name="data" type="view" request="rdfa" />
 </basis>
-<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2380142">
+<basis core="dbsource" source="basiscore" name="db" mid="20" lid="1" usedforid="2391283">
   <member typeid="159" propertyid="7249,7244" name="banners-article" type="view" />
 </basis>
 <basis core="dbsource" source="media" lid="1" name="db" usedforid="2380142" sourcemid="article">
@@ -131,27 +131,17 @@
 
     <section class="w-full flex justify-center py-9">
       <div class="px-5 w-full lg:px-5 xl:!w-[1280px] xl:!px-0 flex flex-col gap-6">
-        <a href="/article.bc?lid=1&id=2380142"
+        <a href="/tour/Cruise/nowruz"
           class="w-full relative overflow-hidden banner-container hover:shadow-2xl flex flex-col gap-5 p-6   rounded-xl">
-          <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span>
-          <basis core="print" datamembername="db.banners-article">
-            <face filter="TypeID=150">
-              <p class="text-4xl z-10 font-bold text-white">@text</p>
-            </face>
-          </basis>
-
-          <div class="text-sm z-10 w-65d  text-white line-clamp-3">
-            <basis core="print" datamembername="db.banners-article">
-              <face filter="TypeID<>150"> @largetext </face>
-            </basis>
-          </div>
+          <!-- <span class="absolute w-full h-full left-0 top-0 z-[2] bg-[#0000007D]"></span> -->
+          <div class="h-12"></div>
 
           <button type="button" class="w-bannerbtn z-10 flex font-bold text-white bg-blue3 justify-center items-center">
             مشاهده بیشتر
           </button>
           <basis core="print" datamembername="db.gallery-banner">
             <face>
-              <img loading="lazy" src="@largeIMG" alt="banner"
+              <img loading="lazy" src="[##cms.cms.cdn##]/images/Parmida_mscoffer.jpg" alt="banner"
                 class="absolute w-full h-full object-cover top-0 left-0" />
             </face>
           </basis>

@@ -2202,3 +2202,12 @@ a:hover span.bg-\[\#0000007D\].z-\[2\] {
 .bid-text img {
   display: none !important;
 }
+span.absolute.bg-\[\#0000007D\]{
+  display: none !important;
+}
+#tourmob-list-container{
+  height: 480px !important;
+}
+.swiper-mobile3.home.\!h-\[457px\]{
+  height: 510px !important;
+}
